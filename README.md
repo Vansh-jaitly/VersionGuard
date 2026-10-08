@@ -73,6 +73,7 @@ Current mid-term work: [completion workflow](docs/COMPLETION_WORKFLOW.md),
 [charter](docs/CHARTER.md), [timeline](docs/TIMELINE.md),
 [brief progress report](docs/PROGRESS_REPORT.md) and [demo guide](docs/DEMO_GUIDE.md).
 The teammate's remaining scope is [CodeLlama evaluation only](docs/EVALUATION_ONLY.md).
+The current shared completion steps are in [finish together](docs/FINISH_TOGETHER.md).
 Run all local integration checks with `.venv\Scripts\python.exe -m scripts.verify`.
 
 See [teammate handoff](docs/HANDOFF.md) for the workflow, PR repair command,

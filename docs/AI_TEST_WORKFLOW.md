@@ -7,6 +7,12 @@ authenticated on 8 October 2026. The actual service returned a discontinued noti
 zero tests were generated. See `docs/LIVE_EVIDENCE.md` and
 `results/tool-availability/qodo-response.txt`. This requirement remains unmet.
 
+Next supported-route attempt: official `Codeium.codeium` 1.49.2, titled Windsurf
+Plugin (formerly Codeium), is installed in VS Code. A fresh full-suite baseline
+passed 92 tests and 2 subtests. The isolated workspace and exact prompt are ready;
+actual editor login/generation and review are pending. See
+`docs/FINISH_TOGETHER.md` and `results/ai-tests/baseline-provenance.json`.
+
 ## Comparable measurement
 
 1. Fix the source revision; record source hashes/commit and tool version.

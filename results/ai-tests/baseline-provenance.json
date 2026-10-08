@@ -1,0 +1,18 @@
+{
+  "source_commit": "5972e34c714fc524380090e7ef684fd53210af63",
+  "python": "3.12.3",
+  "baseline_tests_passed": 92,
+  "baseline_subtests_passed": 2,
+  "tool_extension": "Codeium.codeium",
+  "tool_version": "1.49.2",
+  "generation_status": "not_run",
+  "input_sha256_raw_bytes": {
+    "versionguard/repair.py": "dbb33ad6b4e2e63f15eb162a96b29c254e572da4df2201902bb4f075be587659",
+    "tests/test_repair.py": "9fa8c40cfb46aa36576b82a6eb4f18efc820bc7a67bc3458ec1de40b81225737"
+  },
+  "coverage_scope": ["versionguard", "experiment"],
+  "coverage_omit": ["experiment/fixtures/*"],
+  "coverage_report": "before-coverage.json",
+  "test_log": "before-tests.log",
+  "note": "Installation and baseline verification do not establish generated-test provenance."
+}

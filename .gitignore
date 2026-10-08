@@ -6,6 +6,7 @@ venv/
 .ruff_cache/
 .pytest_cache/
 .coverage
+results/ai-tests/.coverage-*
 htmlcov/
 
 # Downloaded or derived data (rebuilt by experiment.fetch_data / experiment.prepare)

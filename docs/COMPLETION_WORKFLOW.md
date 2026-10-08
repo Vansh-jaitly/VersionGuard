@@ -13,7 +13,7 @@ and returning its results, metadata and environment-verification log.
 | 1 | Revise ownership and handoff | `docs/EVALUATION_ONLY.md` | Complete |
 | 2 | Create one local verification entry point | `scripts.verify`; saved successful checks, 92 tests + 2 subtests | Complete |
 | 3 | Demonstrate the real RAG bot and repair | Saved real answer and independent Docker outcomes; retrieval weaknesses disclosed | Complete within documented limits |
-| 4 | Provide generated-test workflow | Prompt and comparable coverage helper; actual Qodo service notice | Generation blocked: CLI discontinued |
+| 4 | Provide generated-test workflow | Actual Qodo service notice; Codeium/Windsurf installed, isolated prompt and fresh 92-test baseline | Editor login/generation and review pending |
 | 5 | Finish assessment documents | Charter, timeline, report, demo guide, contribution log and live evidence | Complete; final rehearsal is personal work |
 | 6 | Host source and run Actions | Published main and actual green Actions run | Complete |
 | 7 | Demonstrate a failing and fixed PR | PR #1; actual VG001 annotation and red/green run links | Complete |
