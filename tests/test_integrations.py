@@ -99,7 +99,10 @@ class DeliveryTests(unittest.TestCase):
             path.write_text('', encoding='utf-8')
             path.with_suffix('.meta.json').write_text(json.dumps({'model': 'real:model', 'split': 'test',
                                                                 'dataset_sha256': 'wrong'}), encoding='utf-8')
-            with self.assertRaisesRegex(ValueError, 'dataset_sha256'):
+            dataset = root / 'dataset.jsonl'
+            dataset.write_text('synthetic benchmark input\n', encoding='utf-8')
+            with patch.object(import_results, 'DATA_FILE', dataset), \
+                    self.assertRaisesRegex(ValueError, 'dataset_sha256'):
                 import_results.validate(path, root / 'destination')
             self.assertFalse((root / 'destination').exists())
 
