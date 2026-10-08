@@ -1,0 +1,45 @@
+Model: fake:stale   split: fixtures   executor: host
+Tasks: 6 usable (0 not prepared or unusable)   conditions: task_only, version, lookup, oracle, repair_log, repair_docs
+Planned: 36 runs   already done: 0
+Results: C:\Users\vansh\Desktop\idt\VersionGuard\results\verification\fixtures\fixtures-fake_stale.jsonl
+
+Run 1/36 | task f1 | task_only   | error | 0.6s | elapsed 0.0m
+Run 2/36 | task f1 | version     | error | 1.5s | elapsed 0.0m
+Run 3/36 | task f1 | lookup      | pass | 1.4s | elapsed 0.1m
+Run 4/36 | task f1 | oracle      | pass | 1.4s | elapsed 0.1m
+Run 5/36 | task f1 | repair_log  | error | 1.4s | elapsed 0.1m
+Run 6/36 | task f1 | repair_docs | pass | 1.4s | elapsed 0.1m
+Run 7/36 | task f2 | task_only   | error | 1.4s | elapsed 0.2m
+Run 8/36 | task f2 | version     | error | 1.4s | elapsed 0.2m
+Run 9/36 | task f2 | lookup      | pass | 1.4s | elapsed 0.2m
+Run 10/36 | task f2 | oracle      | pass | 1.4s | elapsed 0.2m
+Run 11/36 | task f2 | repair_log  | error | 1.4s | elapsed 0.2m
+Run 12/36 | task f2 | repair_docs | pass | 1.5s | elapsed 0.3m
+Run 13/36 | task f3 | task_only   | error | 1.4s | elapsed 0.3m
+Run 14/36 | task f3 | version     | error | 1.4s | elapsed 0.3m
+Run 15/36 | task f3 | lookup      | pass | 1.4s | elapsed 0.3m
+Run 16/36 | task f3 | oracle      | pass | 1.4s | elapsed 0.4m
+Run 17/36 | task f3 | repair_log  | error | 1.4s | elapsed 0.4m
+Run 18/36 | task f3 | repair_docs | pass | 1.6s | elapsed 0.4m
+Run 19/36 | task f4 | task_only   | fail | 1.5s | elapsed 0.4m
+Run 20/36 | task f4 | version     | fail | 1.4s | elapsed 0.5m
+Run 21/36 | task f4 | lookup      | pass | 1.7s | elapsed 0.5m
+Run 22/36 | task f4 | oracle      | pass | 1.5s | elapsed 0.5m
+Run 23/36 | task f4 | repair_log  | fail | 1.6s | elapsed 0.5m
+Run 24/36 | task f4 | repair_docs | pass | 1.4s | elapsed 0.6m
+Run 25/36 | task f5 | task_only   | error | 1.6s | elapsed 0.6m
+Run 26/36 | task f5 | version     | error | 1.4s | elapsed 0.6m
+Run 27/36 | task f5 | lookup      | pass | 1.6s | elapsed 0.6m
+Run 28/36 | task f5 | oracle      | pass | 1.4s | elapsed 0.7m
+Run 29/36 | task f5 | repair_log  | error | 1.4s | elapsed 0.7m
+Run 30/36 | task f5 | repair_docs | pass | 2.5s | elapsed 0.7m
+Run 31/36 | task f6 | task_only   | pass | 0.6s | elapsed 0.7m
+Run 32/36 | task f6 | version     | pass | 3.3s | elapsed 0.8m
+Run 33/36 | task f6 | lookup      | pass | 0.6s | elapsed 0.8m
+Run 34/36 | task f6 | oracle      | pass | 1.4s | elapsed 0.8m
+Run 35/36 | task f6 | repair_log  | pass (kept first attempt) | 0.0s | elapsed 0.8m
+Run 36/36 | task f6 | repair_docs | pass (kept first attempt) | 0.0s | elapsed 0.8m
+
+Finished in 0.8 min. Results: C:\Users\vansh\Desktop\idt\VersionGuard\results\verification\fixtures\fixtures-fake_stale.jsonl
+Next: python -m experiment.report --split fixtures
+

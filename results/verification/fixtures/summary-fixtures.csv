@@ -1,0 +1,7 @@
+model,condition,n,passed,pass_rate
+fake:stale,task_only,6,1,0.1667
+fake:stale,version,6,1,0.1667
+fake:stale,lookup,6,6,1.0
+fake:stale,oracle,6,6,1.0
+fake:stale,repair_log,6,1,0.1667
+fake:stale,repair_docs,6,6,1.0

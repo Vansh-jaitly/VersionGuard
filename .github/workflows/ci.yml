@@ -1,0 +1,55 @@
+name: VersionGuard CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install test and demo dependencies
+        run: python -m pip install -r requirements-dev.txt -r requirements-ci.txt
+      - name: Lint
+        run: python -m ruff check .
+      - name: Tests and coverage
+        run: |
+          python -m coverage run -m pytest -q
+          python -m coverage report
+          python -m coverage json -o results/coverage-ci.json
+      - name: Fixture pipeline
+        run: |
+          python -m experiment.run --split fixtures --model fake:stale --executor host
+          python -m experiment.report --split fixtures --require-complete
+      - name: Guard demonstration
+        run: python -m scripts.guard_demo
+      - name: Guard on changed application files
+        if: github.event_name == 'pull_request'
+        env:
+          VG_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          VG_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: python -m scripts.guard_changed
+      - name: Save verification artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: versionguard-verification
+          path: |
+            results/coverage-ci.json
+            results/report-fixtures.md
+            results/summary-fixtures.csv
+            results/guard-demo.json
+          if-no-files-found: warn

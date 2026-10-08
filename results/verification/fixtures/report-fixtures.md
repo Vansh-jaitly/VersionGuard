@@ -1,0 +1,90 @@
+# VersionGuard results: fixtures split
+
+> **Self-check output.** Fixture tasks and/or a scripted stand-in model. This shows the pipeline works; it is not a finding about any model.
+
+## Run coverage
+
+| Model | Tasks recorded | Tasks with all six cells | Cells recorded | Expected cells |
+|---|---|---|---|---|
+| `fake:stale` | 6 | 6 | 36 | 36 |
+
+## 1. Tests passed, by condition
+
+| Model | 1 Task only | 2 Version | 3 Lookup | 4 Correct docs | 5 Repair, log only | 6 Repair, log + docs |
+|---|---|---|---|---|---|---|
+| `fake:stale` | 16.7% (1/6) | 16.7% (1/6) | 100.0% (6/6) | 100.0% (6/6) | 16.7% (1/6) | 100.0% (6/6) |
+
+Conditions 5 and 6 are the result after one repair round: tasks that already passed in condition 2 keep their pass, tasks that failed get one retry. Condition 4 only covers tasks whose reference APIs could be matched to documentation.
+
+## 2. Paired comparisons
+
+| Model | Comparison | Tasks | Pass rate | Difference, points [95% CI] | p | Tasks gained / lost | Verdict |
+|---|---|---|---|---|---|---|---|
+| `fake:stale` | Lookup vs version only | 6 | 16.7% -> 100.0% | +83.3 [+50.0, +100.0] | 0.063 | +5 / -0 | **useful** |
+| `fake:stale` | Repair with docs vs repair with log only | 6 | 16.7% -> 100.0% | +83.3 [+50.0, +100.0] | 0.063 | +5 / -0 | **useful** |
+| `fake:stale` | Version only vs task only | 6 | 16.7% -> 16.7% | +0.0 [+0.0, +0.0] | 1.000 | +0 / -0 | no effect detected |
+| `fake:stale` | Correct docs vs lookup (room left in the lookup) | 6 | 100.0% -> 100.0% | +0.0 [+0.0, +0.0] | 1.000 | +0 / -0 | no effect detected |
+| `fake:stale` | One repair round vs no repair | 6 | 16.7% -> 16.7% | +0.0 [+0.0, +0.0] | 1.000 | +0 / -0 | no effect detected |
+
+Verdicts in bold apply the rule fixed in `experiment/PROTOCOL.md`: *useful* needs a gain of at least 10 points and a 95% interval above zero. The other rows are descriptive.
+
+## 3. Did the lookup find the right documentation?
+
+| Model | Lookup found a reference API | Pass rate when found | Pass rate when missed | Tasks with no oracle |
+|---|---|---|---|---|
+| `fake:stale` | 6/6 | 100.0% (6 tasks) | n/a | 0 |
+
+The lookup is the same for every model (it is computed once and cached), so the first column is identical across models. A high pass rate when found and a low one when missed points at retrieval; a low pass rate even when found points at the model not using the documentation.
+
+## 4. Why answers failed
+
+| Model | Condition | Failed | Wrong result | API missing | Wrong arguments | Other error | No code | Timeout |
+|---|---|---|---|---|---|---|---|---|
+| `fake:stale` | 1 Task only | 5 | 1 | 3 | 1 | 0 | 0 | 0 |
+| `fake:stale` | 2 Version | 5 | 1 | 3 | 1 | 0 | 0 | 0 |
+| `fake:stale` | 3 Lookup | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| `fake:stale` | 4 Correct docs | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| `fake:stale` | 5 Repair, log only | 5 | 1 | 3 | 1 | 0 | 0 | 0 |
+| `fake:stale` | 6 Repair, log + docs | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+Categories are assigned automatically from the error: *API missing* is an AttributeError or ImportError, *wrong arguments* is a TypeError about the call's arguments, *wrong result* is a failed assertion.
+
+## 5. The repair round
+
+| Model | Failed first attempt (condition 2) | Fixed with log only | Fixed with log + docs |
+|---|---|---|---|
+| `fake:stale` | 5 | 0/5 | 5/5 |
+
+## 6. By kind of library change
+
+| Model | Kind of change | Tasks | 2 Version | 3 Lookup | 6 Repair, log + docs |
+|---|---|---|---|---|---|
+| `fake:stale` | name change | 2 | 0.0% | 100.0% | 100.0% |
+| `fake:stale` | argument change | 1 | 0.0% | 100.0% | 100.0% |
+| `fake:stale` | behaviour change | 1 | 0.0% | 100.0% | 100.0% |
+| `fake:stale` | no change (control) | 1 | 100.0% | 100.0% | 100.0% |
+| `fake:stale` | removed method | 1 | 0.0% | 100.0% | 100.0% |
+
+Groups this small are for spotting patterns, not for conclusions.
+
+## 7. How these numbers were produced
+
+| Model | Model digest | Ollama | Laptop | Temp. | Seed | Context | Lookup cache | Executor |
+|---|---|---|---|---|---|---|---|---|
+| `fake:stale` | n/a | n/a | Windows AMD64 | 0.0 | 42 | 4096 | 02b96e43e774 | host |
+
+Each model ran on one laptop. Speed is not compared across laptops.
+
+## 8. Model time and tokens on this laptop
+
+| Model | Condition | Generated answers | Median seconds | Model minutes | Input tokens | Output tokens |
+|---|---|---|---|---|---|---|
+| `fake:stale` | 1 Task only | 6 | 0.0 | 0.0 | 155 | 42 |
+| `fake:stale` | 2 Version | 6 | 0.0 | 0.0 | 317 | 42 |
+| `fake:stale` | 3 Lookup | 6 | 0.0 | 0.0 | 655 | 44 |
+| `fake:stale` | 4 Correct docs | 6 | 0.0 | 0.0 | 471 | 44 |
+| `fake:stale` | 5 Repair, log only | 5 | 0.0 | 0.0 | 465 | 34 |
+| `fake:stale` | 6 Repair, log + docs | 5 | 0.0 | 0.0 | 743 | 36 |
+
+Carried first-attempt passes and skipped cells do not count as model calls.
+

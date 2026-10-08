@@ -1,0 +1,24 @@
+[project]
+name = "versionguard"
+version = "0.1.0"
+description = "Version-aware documentation lookup, guard and repair for AI-written code"
+requires-python = ">=3.10"
+
+[tool.ruff]
+line-length = 140
+target-version = "py310"
+extend-exclude = ["experiment/fixtures/libs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+# apidocs.py runs inside Python 3.7 environments; keep it old-style on purpose.
+"versionguard/apidocs.py" = ["UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["versionguard", "experiment"]
+omit = ["experiment/fixtures/*"]

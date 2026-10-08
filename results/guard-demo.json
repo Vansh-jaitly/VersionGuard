@@ -1,0 +1,25 @@
+{
+  "library": "numpy",
+  "version": "1.26.4",
+  "examples": {
+    "broken": {
+      "exit_code": 1,
+      "findings": [
+        {
+          "file": "demo/broken.py.txt",
+          "line": 5,
+          "col": 12,
+          "code": "VG001",
+          "level": "error",
+          "symbol": "numpy.asscalar",
+          "message": "'numpy' has no attribute 'asscalar' in numpy 1.26.4. Did you mean 'isscalar'?"
+        }
+      ]
+    },
+    "fixed": {
+      "exit_code": 0,
+      "findings": []
+    }
+  },
+  "expected_behavior_verified": true
+}

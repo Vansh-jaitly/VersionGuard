@@ -1,0 +1,23 @@
+{
+  "answer": "```python\nimport numpy as np\n\ndef as_scalar(array):\n    return array.item()\n```\n\nitem",
+  "library": "numpy",
+  "version": "1.25.0",
+  "sources": [
+    "numpy.chararray.item",
+    "numpy.get_include",
+    "numpy.ufunc"
+  ],
+  "metrics": {
+    "input_tokens": 517,
+    "output_tokens": 22,
+    "total_duration_ms": 10112.8513,
+    "eval_duration_ms": 1520.743,
+    "prompt_eval_duration_ms": 804.693
+  },
+  "latency_ms": 10114.8,
+  "guard": {
+    "status": "not_checked",
+    "findings": [],
+    "reason": "Static checking requires numpy 1.25.0 installed here; found 1.26.4."
+  }
+}

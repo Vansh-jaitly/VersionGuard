@@ -1,0 +1,4 @@
+# Tests, coverage and lint (also what CI installs; the test suite needs nothing else).
+pytest>=8
+coverage>=7
+ruff>=0.6

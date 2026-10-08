@@ -1,0 +1,3 @@
+# Needed on every laptop that runs a model.
+langchain-core>=1.0
+langchain-ollama>=1.0

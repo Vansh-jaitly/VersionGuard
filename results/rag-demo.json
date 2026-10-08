@@ -1,0 +1,39 @@
+{
+  "kind": "standalone_demo_not_benchmark",
+  "question": "Convert a one-element NumPy array into a standard Python scalar. Define as_scalar(array).",
+  "model": "qwen2.5:7b-instruct",
+  "retriever": "vector",
+  "started_at": "2026-10-08T10:20:12.535476+00:00",
+  "answer": {
+    "answer": "```python\nimport numpy as np\n\ndef as_scalar(array):\n    return array.item()\n\n# numpy.item\n```",
+    "library": "numpy",
+    "version": "1.25.0",
+    "sources": [
+      "numpy.flexible.take",
+      "numpy.flexible.nonzero",
+      "numpy.flexible.astype"
+    ],
+    "metrics": {
+      "input_tokens": 160,
+      "output_tokens": 24,
+      "total_duration_ms": 14603.3509,
+      "eval_duration_ms": 1671.22,
+      "prompt_eval_duration_ms": 451.321
+    },
+    "latency_ms": 14631.9,
+    "guard": {
+      "status": "not_checked",
+      "findings": [],
+      "reason": "Static checking requires numpy 1.25.0 installed here; found 1.26.4."
+    }
+  },
+  "environment": "py310-numpy-1-25-0-74bc478a08",
+  "execution": {
+    "returncode": 0,
+    "stdout": "Docker scalar checks passed\n",
+    "stderr": "",
+    "timed_out": false,
+    "duration_ms": 2598.866900021676
+  },
+  "passed": true
+}

@@ -1,0 +1,124 @@
+model,example_id,condition,library,version,category,error_type,error_message,code,feedback
+fake:stale,f1,task_only,minilib,2.0,api_missing,AttributeError,module 'minilib' has no attribute 'moving_average',"import minilib
+
+def smooth(readings):
+    return minilib.moving_average(readings, 3)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in smooth
+    return minilib.moving_average(readings, 3)
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'minilib' has no attribute 'moving_average'"
+fake:stale,f1,version,minilib,2.0,api_missing,AttributeError,module 'minilib' has no attribute 'moving_average',"import minilib
+
+def smooth(readings):
+    return minilib.moving_average(readings, 3)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in smooth
+    return minilib.moving_average(readings, 3)
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'minilib' has no attribute 'moving_average'"
+fake:stale,f1,repair_log,minilib,2.0,api_missing,AttributeError,module 'minilib' has no attribute 'moving_average',"import minilib
+
+def smooth(readings):
+    return minilib.moving_average(readings, 3)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in smooth
+    return minilib.moving_average(readings, 3)
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'minilib' has no attribute 'moving_average'"
+fake:stale,f2,task_only,minilib,2.0,api_signature,TypeError,scale() got an unexpected keyword argument 'factor',"import minilib
+
+def double(prices):
+    return minilib.scale(prices, factor=2)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in double
+    return minilib.scale(prices, factor=2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: scale() got an unexpected keyword argument 'factor'"
+fake:stale,f2,version,minilib,2.0,api_signature,TypeError,scale() got an unexpected keyword argument 'factor',"import minilib
+
+def double(prices):
+    return minilib.scale(prices, factor=2)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in double
+    return minilib.scale(prices, factor=2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: scale() got an unexpected keyword argument 'factor'"
+fake:stale,f2,repair_log,minilib,2.0,api_signature,TypeError,scale() got an unexpected keyword argument 'factor',"import minilib
+
+def double(prices):
+    return minilib.scale(prices, factor=2)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in double
+    return minilib.scale(prices, factor=2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: scale() got an unexpected keyword argument 'factor'"
+fake:stale,f3,task_only,minilib,2.0,api_missing,AttributeError,'Table' object has no attribute 'append',"import minilib
+
+def add_row(table, row):
+    return table.append(row)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in add_row
+    return table.append(row)
+           ^^^^^^^^^^^^
+AttributeError: 'Table' object has no attribute 'append'"
+fake:stale,f3,version,minilib,2.0,api_missing,AttributeError,'Table' object has no attribute 'append',"import minilib
+
+def add_row(table, row):
+    return table.append(row)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in add_row
+    return table.append(row)
+           ^^^^^^^^^^^^
+AttributeError: 'Table' object has no attribute 'append'"
+fake:stale,f3,repair_log,minilib,2.0,api_missing,AttributeError,'Table' object has no attribute 'append',"import minilib
+
+def add_row(table, row):
+    return table.append(row)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in add_row
+    return table.append(row)
+           ^^^^^^^^^^^^
+AttributeError: 'Table' object has no attribute 'append'"
+fake:stale,f4,task_only,minilib,2.0,wrong_result,AssertionError,,"import minilib
+
+def to_unit_range(scores):
+    return minilib.normalize(scores)
+",AssertionError: the function ran but returned a wrong result for the test input.
+fake:stale,f4,version,minilib,2.0,wrong_result,AssertionError,,"import minilib
+
+def to_unit_range(scores):
+    return minilib.normalize(scores)
+",AssertionError: the function ran but returned a wrong result for the test input.
+fake:stale,f4,repair_log,minilib,2.0,wrong_result,AssertionError,,"import minilib
+
+def to_unit_range(scores):
+    return minilib.normalize(scores)
+",AssertionError: the function ran but returned a wrong result for the test input.
+fake:stale,f5,task_only,minilib,1.0,api_missing,AttributeError,module 'minilib' has no attribute 'rolling_mean',"import minilib
+
+def smooth_pairs(readings):
+    return minilib.rolling_mean(readings, 2)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in smooth_pairs
+    return minilib.rolling_mean(readings, 2)
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'minilib' has no attribute 'rolling_mean'"
+fake:stale,f5,version,minilib,1.0,api_missing,AttributeError,module 'minilib' has no attribute 'rolling_mean',"import minilib
+
+def smooth_pairs(readings):
+    return minilib.rolling_mean(readings, 2)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in smooth_pairs
+    return minilib.rolling_mean(readings, 2)
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'minilib' has no attribute 'rolling_mean'"
+fake:stale,f5,repair_log,minilib,1.0,api_missing,AttributeError,module 'minilib' has no attribute 'rolling_mean',"import minilib
+
+def smooth_pairs(readings):
+    return minilib.rolling_mean(readings, 2)
+","Traceback (most recent call last):
+  File ""prog.py"", line 4, in smooth_pairs
+    return minilib.rolling_mean(readings, 2)
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'minilib' has no attribute 'rolling_mean'"

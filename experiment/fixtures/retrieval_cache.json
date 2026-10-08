@@ -1,0 +1,198 @@
+{
+ "retriever": "bm25",
+ "k": 3,
+ "doc_char_budget": 2400,
+ "tasks": {
+  "f1": {
+   "env_key": "py310-minilib-2-0-1220adc217",
+   "split": "fixtures",
+   "usable": true,
+   "corpus_size": 8,
+   "corpus_fingerprint": "dfafb4c5fa14ce00",
+   "retrieved": [
+    {
+     "qualname": "minilib.rolling_mean",
+     "text": "minilib.rolling_mean(values, size)\nReturn the mean of `values` over a sliding window of `size` items. Replaces moving_average() from 1.x. The result has len(values) - size + 1 items."
+    },
+    {
+     "qualname": "minilib.clip",
+     "text": "minilib.clip(values, low, high)\nLimit every value to the range [low, high]."
+    },
+    {
+     "qualname": "minilib.scale",
+     "text": "minilib.scale(values, by=1.0)\nMultiply every value by `by`. (The argument was called `factor` in 1.x.)"
+    }
+   ],
+   "retrieved_text": "minilib.rolling_mean(values, size)\nReturn the mean of `values` over a sliding window of `size` items. Replaces moving_average() from 1.x. The result has len(values) - size + 1 items.\n\nminilib.clip(values, low, high)\nLimit every value to the range [low, high].\n\nminilib.scale(values, by=1.0)\nMultiply every value by `by`. (The argument was called `factor` in 1.x.)",
+   "oracle": [
+    {
+     "qualname": "minilib.rolling_mean",
+     "text": "minilib.rolling_mean(values, size)\nReturn the mean of `values` over a sliding window of `size` items. Replaces moving_average() from 1.x. The result has len(values) - size + 1 items."
+    }
+   ],
+   "oracle_text": "minilib.rolling_mean(values, size)\nReturn the mean of `values` over a sliding window of `size` items. Replaces moving_average() from 1.x. The result has len(values) - size + 1 items.",
+   "oracle_available": true,
+   "retrieval_hit": true
+  },
+  "f2": {
+   "env_key": "py310-minilib-2-0-1220adc217",
+   "split": "fixtures",
+   "usable": true,
+   "corpus_size": 8,
+   "corpus_fingerprint": "dfafb4c5fa14ce00",
+   "retrieved": [
+    {
+     "qualname": "minilib.scale",
+     "text": "minilib.scale(values, by=1.0)\nMultiply every value by `by`. (The argument was called `factor` in 1.x.)"
+    },
+    {
+     "qualname": "minilib.clip",
+     "text": "minilib.clip(values, low, high)\nLimit every value to the range [low, high]."
+    },
+    {
+     "qualname": "minilib.normalize",
+     "text": "minilib.normalize(values, mode='zscore')\nNormalise values. mode=\"zscore\" (default since 2.0) subtracts the mean and divides by the population standard deviation. mode=\"minmax\" rescales linearly to 0..1, which was the only behaviour in 1.x."
+    }
+   ],
+   "retrieved_text": "minilib.scale(values, by=1.0)\nMultiply every value by `by`. (The argument was called `factor` in 1.x.)\n\nminilib.clip(values, low, high)\nLimit every value to the range [low, high].\n\nminilib.normalize(values, mode='zscore')\nNormalise values. mode=\"zscore\" (default since 2.0) subtracts the mean and divides by the population standard deviation. mode=\"minmax\" rescales linearly to 0..1, which was the only behaviour in 1.x.",
+   "oracle": [
+    {
+     "qualname": "minilib.scale",
+     "text": "minilib.scale(values, by=1.0)\nMultiply every value by `by`. (The argument was called `factor` in 1.x.)"
+    }
+   ],
+   "oracle_text": "minilib.scale(values, by=1.0)\nMultiply every value by `by`. (The argument was called `factor` in 1.x.)",
+   "oracle_available": true,
+   "retrieval_hit": true
+  },
+  "f3": {
+   "env_key": "py310-minilib-2-0-1220adc217",
+   "split": "fixtures",
+   "usable": true,
+   "corpus_size": 8,
+   "corpus_fingerprint": "dfafb4c5fa14ce00",
+   "retrieved": [
+    {
+     "qualname": "minilib.concat",
+     "text": "minilib.concat(tables)\nJoin several Table objects into one, keeping row order. Replaces Table.append() from 1.x: concat([table, Table([row])])."
+    },
+    {
+     "qualname": "minilib.Table.count",
+     "text": "minilib.Table.count(self)\nReturn the number of rows."
+    },
+    {
+     "qualname": "minilib.rolling_mean",
+     "text": "minilib.rolling_mean(values, size)\nReturn the mean of `values` over a sliding window of `size` items. Replaces moving_average() from 1.x. The result has len(values) - size + 1 items."
+    }
+   ],
+   "retrieved_text": "minilib.concat(tables)\nJoin several Table objects into one, keeping row order. Replaces Table.append() from 1.x: concat([table, Table([row])]).\n\nminilib.Table.count(self)\nReturn the number of rows.\n\nminilib.rolling_mean(values, size)\nReturn the mean of `values` over a sliding window of `size` items. Replaces moving_average() from 1.x. The result has len(values) - size + 1 items.",
+   "oracle": [
+    {
+     "qualname": "minilib.concat",
+     "text": "minilib.concat(tables)\nJoin several Table objects into one, keeping row order. Replaces Table.append() from 1.x: concat([table, Table([row])])."
+    },
+    {
+     "qualname": "minilib.Table",
+     "text": "minilib.Table(rows=None)\nA list of rows."
+    }
+   ],
+   "oracle_text": "minilib.concat(tables)\nJoin several Table objects into one, keeping row order. Replaces Table.append() from 1.x: concat([table, Table([row])]).\n\nminilib.Table(rows=None)\nA list of rows.",
+   "oracle_available": true,
+   "retrieval_hit": true
+  },
+  "f4": {
+   "env_key": "py310-minilib-2-0-1220adc217",
+   "split": "fixtures",
+   "usable": true,
+   "corpus_size": 8,
+   "corpus_fingerprint": "dfafb4c5fa14ce00",
+   "retrieved": [
+    {
+     "qualname": "minilib.normalize",
+     "text": "minilib.normalize(values, mode='zscore')\nNormalise values. mode=\"zscore\" (default since 2.0) subtracts the mean and divides by the population standard deviation. mode=\"minmax\" rescales linearly to 0..1, which was the only behaviour in 1.x."
+    },
+    {
+     "qualname": "minilib.clip",
+     "text": "minilib.clip(values, low, high)\nLimit every value to the range [low, high]."
+    },
+    {
+     "qualname": "minilib.scale",
+     "text": "minilib.scale(values, by=1.0)\nMultiply every value by `by`. (The argument was called `factor` in 1.x.)"
+    }
+   ],
+   "retrieved_text": "minilib.normalize(values, mode='zscore')\nNormalise values. mode=\"zscore\" (default since 2.0) subtracts the mean and divides by the population standard deviation. mode=\"minmax\" rescales linearly to 0..1, which was the only behaviour in 1.x.\n\nminilib.clip(values, low, high)\nLimit every value to the range [low, high].\n\nminilib.scale(values, by=1.0)\nMultiply every value by `by`. (The argument was called `factor` in 1.x.)",
+   "oracle": [
+    {
+     "qualname": "minilib.normalize",
+     "text": "minilib.normalize(values, mode='zscore')\nNormalise values. mode=\"zscore\" (default since 2.0) subtracts the mean and divides by the population standard deviation. mode=\"minmax\" rescales linearly to 0..1, which was the only behaviour in 1.x."
+    }
+   ],
+   "oracle_text": "minilib.normalize(values, mode='zscore')\nNormalise values. mode=\"zscore\" (default since 2.0) subtracts the mean and divides by the population standard deviation. mode=\"minmax\" rescales linearly to 0..1, which was the only behaviour in 1.x.",
+   "oracle_available": true,
+   "retrieval_hit": true
+  },
+  "f5": {
+   "env_key": "py310-minilib-1-0-b1f5ed274a",
+   "split": "fixtures",
+   "usable": true,
+   "corpus_size": 8,
+   "corpus_fingerprint": "ef0af825a9f24f7c",
+   "retrieved": [
+    {
+     "qualname": "minilib.moving_average",
+     "text": "minilib.moving_average(values, window)\nReturn the moving average of `values` over a sliding `window`. The result has len(values) - window + 1 items."
+    },
+    {
+     "qualname": "minilib.clip",
+     "text": "minilib.clip(values, low, high)\nLimit every value to the range [low, high]."
+    },
+    {
+     "qualname": "minilib.mean",
+     "text": "minilib.mean(values)\nReturn the arithmetic mean of a list of numbers."
+    }
+   ],
+   "retrieved_text": "minilib.moving_average(values, window)\nReturn the moving average of `values` over a sliding `window`. The result has len(values) - window + 1 items.\n\nminilib.clip(values, low, high)\nLimit every value to the range [low, high].\n\nminilib.mean(values)\nReturn the arithmetic mean of a list of numbers.",
+   "oracle": [
+    {
+     "qualname": "minilib.moving_average",
+     "text": "minilib.moving_average(values, window)\nReturn the moving average of `values` over a sliding `window`. The result has len(values) - window + 1 items."
+    }
+   ],
+   "oracle_text": "minilib.moving_average(values, window)\nReturn the moving average of `values` over a sliding `window`. The result has len(values) - window + 1 items.",
+   "oracle_available": true,
+   "retrieval_hit": true
+  },
+  "f6": {
+   "env_key": "py310-minilib-2-0-1220adc217",
+   "split": "fixtures",
+   "usable": true,
+   "corpus_size": 8,
+   "corpus_fingerprint": "dfafb4c5fa14ce00",
+   "retrieved": [
+    {
+     "qualname": "minilib.clip",
+     "text": "minilib.clip(values, low, high)\nLimit every value to the range [low, high]."
+    },
+    {
+     "qualname": "minilib.scale",
+     "text": "minilib.scale(values, by=1.0)\nMultiply every value by `by`. (The argument was called `factor` in 1.x.)"
+    },
+    {
+     "qualname": "minilib.normalize",
+     "text": "minilib.normalize(values, mode='zscore')\nNormalise values. mode=\"zscore\" (default since 2.0) subtracts the mean and divides by the population standard deviation. mode=\"minmax\" rescales linearly to 0..1, which was the only behaviour in 1.x."
+    }
+   ],
+   "retrieved_text": "minilib.clip(values, low, high)\nLimit every value to the range [low, high].\n\nminilib.scale(values, by=1.0)\nMultiply every value by `by`. (The argument was called `factor` in 1.x.)\n\nminilib.normalize(values, mode='zscore')\nNormalise values. mode=\"zscore\" (default since 2.0) subtracts the mean and divides by the population standard deviation. mode=\"minmax\" rescales linearly to 0..1, which was the only behaviour in 1.x.",
+   "oracle": [
+    {
+     "qualname": "minilib.clip",
+     "text": "minilib.clip(values, low, high)\nLimit every value to the range [low, high]."
+    }
+   ],
+   "oracle_text": "minilib.clip(values, low, high)\nLimit every value to the range [low, high].",
+   "oracle_available": true,
+   "retrieval_hit": true
+  }
+ },
+ "lookup_version": "one-entry-per-name-v1"
+}

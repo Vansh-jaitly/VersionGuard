@@ -1,0 +1,18 @@
+{
+  "answer": "```python\nimport numpy as np\n\ndef as_scalar(array):\n    return np.item(array)\n```\n\nnumpy.item",
+  "library": "numpy",
+  "version": "1.25.0",
+  "sources": [
+    "numpy.linalg.LinAlgError",
+    "numpy.get_include",
+    "numpy.product"
+  ],
+  "metrics": {
+    "input_tokens": 456,
+    "output_tokens": 24,
+    "total_duration_ms": 2426.2744,
+    "eval_duration_ms": 1773.655,
+    "prompt_eval_duration_ms": 540.531
+  },
+  "latency_ms": 2449.0
+}

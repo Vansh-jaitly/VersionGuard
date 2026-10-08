@@ -1,0 +1,6 @@
+model,treatment,baseline,n,treatment_rate,baseline_rate,diff,low,high,p,gained,lost,verdict
+fake:stale,lookup,version,6,1.0,0.16666666666666666,0.8333333333333334,0.5,1.0,0.062993700629937,5,0,useful
+fake:stale,repair_docs,repair_log,6,1.0,0.16666666666666666,0.8333333333333334,0.5,1.0,0.062993700629937,5,0,useful
+fake:stale,version,task_only,6,0.16666666666666666,0.16666666666666666,0.0,0.0,0.0,1.0,0,0,no effect detected
+fake:stale,oracle,lookup,6,1.0,1.0,0.0,0.0,0.0,1.0,0,0,no effect detected
+fake:stale,repair_log,version,6,0.16666666666666666,0.16666666666666666,0.0,0.0,0.0,1.0,0,0,no effect detected

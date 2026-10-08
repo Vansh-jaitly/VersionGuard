@@ -1,0 +1,103 @@
+{
+  "started_at": "2026-10-08T10:25:43.450516+00:00",
+  "python": "3.12.3 (tags/v3.12.3:f6650f9, Apr  9 2024, 14:05:25) [MSC v.1938 64 bit (AMD64)]",
+  "input_hashes": {
+    "data\\gitchameleon.jsonl": "ca8533ecdc7594a7b7ca090cecd3ca17dc6c34e241277ef852e9ff26607e7fde",
+    "experiment\\retrieval_cache.json": "a721503561a670d8027a82551d325f668f524e66d225d45473f03a609773cbc0",
+    "experiment\\splits\\split.json": "6f8d968655f79eab9e0afeeb7b176e085b323f1a6fc70a8f77210a93ab22b343",
+    "experiment\\PROTOCOL.md": "5d1e50f0ade2a8192f6e5e0062c024419883999bd26ca30a2559726ceda465a9",
+    "results\\dev-qwen2.5_7b-instruct.jsonl": "6f00110aed627fe837889a1e821ee06aa1e0c8f450ab1bd39ac9f47abbeb1d2e",
+    "results\\dev-qwen2.5_7b-instruct.meta.json": "1b09e3079359d956e8d3584072ca65064729d923c23be552837ae661b4ef24b1",
+    "results\\test-qwen2.5_7b-instruct.jsonl": "661174b9bfc32a4a2755271cc23364c8e5b612d344c6706b089a379664133504",
+    "results\\test-qwen2.5_7b-instruct.meta.json": "a971b7d68ac6e0514dadce3d5f3ee6814eed67b29f52e32e04f396a76a190216"
+  },
+  "checks": [
+    {
+      "name": "lint",
+      "command": [
+        "C:\\Users\\vansh\\Desktop\\idt\\VersionGuard\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "log": "lint.log"
+    },
+    {
+      "name": "tests",
+      "command": [
+        "C:\\Users\\vansh\\Desktop\\idt\\VersionGuard\\.venv\\Scripts\\python.exe",
+        "-m",
+        "coverage",
+        "run",
+        "--data-file=C:\\Users\\vansh\\Desktop\\idt\\VersionGuard\\results\\verification\\.coverage",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log": "tests.log"
+    },
+    {
+      "name": "coverage",
+      "command": [
+        "C:\\Users\\vansh\\Desktop\\idt\\VersionGuard\\.venv\\Scripts\\python.exe",
+        "-m",
+        "coverage",
+        "json",
+        "--data-file=C:\\Users\\vansh\\Desktop\\idt\\VersionGuard\\results\\verification\\.coverage",
+        "-o",
+        "C:\\Users\\vansh\\Desktop\\idt\\VersionGuard\\results\\verification\\coverage.json"
+      ],
+      "exit_code": 0,
+      "log": "coverage.log"
+    },
+    {
+      "name": "fixtures",
+      "command": [
+        "C:\\Users\\vansh\\Desktop\\idt\\VersionGuard\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiment.run",
+        "--split",
+        "fixtures",
+        "--model",
+        "fake:stale",
+        "--executor",
+        "host",
+        "--results-dir",
+        "C:\\Users\\vansh\\Desktop\\idt\\VersionGuard\\results\\verification\\fixtures"
+      ],
+      "exit_code": 0,
+      "log": "fixtures.log"
+    },
+    {
+      "name": "fixture_report",
+      "command": [
+        "C:\\Users\\vansh\\Desktop\\idt\\VersionGuard\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiment.report",
+        "--split",
+        "fixtures",
+        "--require-complete",
+        "--results-dir",
+        "C:\\Users\\vansh\\Desktop\\idt\\VersionGuard\\results\\verification\\fixtures"
+      ],
+      "exit_code": 0,
+      "log": "fixture_report.log"
+    },
+    {
+      "name": "guard_demo",
+      "command": [
+        "C:\\Users\\vansh\\Desktop\\idt\\VersionGuard\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.guard_demo"
+      ],
+      "exit_code": 0,
+      "log": "guard_demo.log"
+    }
+  ],
+  "fixed_inputs_unchanged": true,
+  "finished_at": "2026-10-08T10:29:13.974424+00:00",
+  "passed": true
+}

@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Downloaded or derived data (rebuilt by experiment.fetch_data / experiment.prepare)
+data/
+.vg_work/
+
+# Self-check output is never a result
+results/fixtures-*
+results/report-fixtures.md
+results/summary-fixtures.csv
+results/comparisons-fixtures.csv
+results/failures-fixtures.csv
+results/coverage-ci.json
+deliverables/*.zip
+
+# Secrets
+.env
+.tools/

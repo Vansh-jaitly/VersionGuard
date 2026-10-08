@@ -1,0 +1,6 @@
+model,treatment,baseline,n,treatment_rate,baseline_rate,diff,low,high,p,gained,lost,verdict
+qwen2.5:7b-instruct,lookup,version,20,0.35,0.5,-0.15,-0.3,0.0,0.24967503249675033,0,3,no effect detected
+qwen2.5:7b-instruct,repair_docs,repair_log,20,0.5,0.5,0.0,0.0,0.0,1.0,0,0,no effect detected
+qwen2.5:7b-instruct,version,task_only,20,0.5,0.55,-0.05,-0.2,0.1,1.0,1,2,no effect detected
+qwen2.5:7b-instruct,oracle,lookup,10,0.5,0.4,0.1,0.0,0.3,1.0,1,0,no effect detected
+qwen2.5:7b-instruct,repair_log,version,20,0.5,0.5,0.0,0.0,0.0,1.0,0,0,no effect detected

@@ -1,0 +1,26 @@
+{
+  "environment": "py310-numpy-1-25-0-74bc478a08",
+  "library": "numpy",
+  "version": "1.25.0",
+  "executor": "docker",
+  "proposals": {
+    "initial": {
+      "code": "import numpy as np\n\ndef as_scalar(array):\n    return np.item(array)",
+      "passed": false,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/work/prog.py\", line 6, in <module>\n    value = as_scalar(np.array([42], dtype=np.int64))\n  File \"/work/prog.py\", line 4, in as_scalar\n    return np.item(array)\n  File \"/usr/local/lib/python3.10/site-packages/numpy/__init__.py\", line 322, in __getattr__\n    raise AttributeError(\"module {!r} has no attribute \"\nAttributeError: module 'numpy' has no attribute 'item'\n",
+      "timed_out": false,
+      "duration_ms": 1560.953399981372
+    },
+    "updated": {
+      "code": "import numpy as np\n\ndef as_scalar(array):\n    return array.item()",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "scalar conversion checks passed\n",
+      "stderr": "",
+      "timed_out": false,
+      "duration_ms": 1019.024699984584
+    }
+  }
+}

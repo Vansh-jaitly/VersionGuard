@@ -1,0 +1,2 @@
+# Same line endings on Windows and macOS, so file hashes and tests agree.
+* text=auto eol=lf

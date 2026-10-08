@@ -1,0 +1,26 @@
+{
+  "model": "fake:stale",
+  "split": "fixtures",
+  "executor": "host",
+  "temperature": 0.0,
+  "seed": 42,
+  "num_ctx": 4096,
+  "num_predict": 768,
+  "exec_timeout_s": 120,
+  "dataset_sha256": null,
+  "split_sha256": null,
+  "retrieval_cache_sha256": "02b96e43e774100ab82dc9aa4c9dd4c8bcfe8d3ef2fce7514d286a59fdf52b27",
+  "protocol_sha256": "5d1e50f0ade2a8192f6e5e0062c024419883999bd26ca30a2559726ceda465a9",
+  "llm": {
+    "kind": "fake",
+    "model": "fake:stale"
+  },
+  "machine": {
+    "system": "Windows",
+    "release": "11",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "python": "3.12.3"
+  },
+  "started_at": "2026-10-08T10:28:17+00:00"
+}

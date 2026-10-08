@@ -1,0 +1,7 @@
+model,condition,n,passed,pass_rate
+qwen2.5:7b-instruct,task_only,20,11,0.55
+qwen2.5:7b-instruct,version,20,10,0.5
+qwen2.5:7b-instruct,lookup,20,7,0.35
+qwen2.5:7b-instruct,oracle,10,5,0.5
+qwen2.5:7b-instruct,repair_log,20,10,0.5
+qwen2.5:7b-instruct,repair_docs,20,10,0.5

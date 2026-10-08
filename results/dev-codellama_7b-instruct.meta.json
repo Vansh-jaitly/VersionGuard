@@ -1,0 +1,27 @@
+{
+  "model": "codellama:7b-instruct",
+  "split": "dev",
+  "executor": "docker",
+  "temperature": 0.0,
+  "seed": 42,
+  "num_ctx": 4096,
+  "num_predict": 768,
+  "exec_timeout_s": 120,
+  "retrieval_cache_sha256": "a721503561a670d8027a82551d325f668f524e66d225d45473f03a609773cbc0",
+  "protocol_sha256": "5d1e50f0ade2a8192f6e5e0062c024419883999bd26ca30a2559726ceda465a9",
+  "llm": {
+    "kind": "ollama",
+    "model": "codellama:7b-instruct",
+    "base_url": "http://localhost:11434",
+    "model_digest": "8fdf8f752f6e80de33e82f381aba784c025982752cd1ae9377add66449d2225f",
+    "ollama_version": "0.35.0"
+  },
+  "machine": {
+    "system": "Windows",
+    "release": "11",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "python": "3.12.3"
+  },
+  "started_at": "2026-10-08T01:24:25+00:00"
+}
