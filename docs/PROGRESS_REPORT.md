@@ -28,11 +28,13 @@ readable output, JSON and GitHub line annotations.
 
 CI configuration runs lint, tests/coverage, the fixture pipeline and a removed-API
 guard demo. Local PR tooling reads source at a fixed commit, saves a repair preview
-and explicitly posts only after checking that the PR has not changed. Generated
-PR source is not executed. Hosted checks and actual comment posting still require
-live evidence.
+and explicitly posts only after checking that the PR has not changed. Hosted
+baseline CI is green. PR #1 records the removed-API guard failure, Qwen repair
+comment and corrected green run. Independent Docker checks confirm that the
+model's static-clean `np.isscalar` proposal is wrong and the reviewed
+`array.item()` correction passes. See `docs/LIVE_EVIDENCE.md` for links.
 
-Latest saved pre-completion verification: 89 tests and 2 subtests passed, Ruff
+Latest saved completion verification: 92 tests and 2 subtests passed, Ruff
 passed, and core statement coverage was 69%. A 36-cell synthetic fixture pipeline
 passed its expected-outcome checks. The guard rejected removed `numpy.asscalar`
 and accepted the correction. Independent NumPy 1.25.0 Docker checks verified a
@@ -70,14 +72,16 @@ CI, named-tool integration, testing evidence and documents. The teammate is
 assigned only reference verification and CodeLlama 7B evaluation on the Mac;
 returned JSONL/metadata will be validated before creating the combined report.
 
-The remaining assessment evidence is a hosted Actions run, an actual guard-failing
-then corrected PR, a live repair comment, CodiumAI/Qodo or accepted Codeium test
-generation, and Sweep automation or a documented availability limitation. Existing
-authored tests must not be described as tool-generated. Contribution records
-disclose AI assistance and distinguish work assignment from completion.
+Hosted Actions, the guard-failing then corrected PR and live repair comment are
+complete. Authenticated Qodo Command returned a service-discontinued notice and
+generated no tests. Sweep's official README now points to JetBrains; two legacy
+GitHub app names returned 404. Named-tool test-generation and Sweep rubric evidence
+therefore remain unmet pending supported access or an instructor-approved
+alternative. Existing tests are not tool-generated. Contribution records disclose
+AI assistance and distinguish work assignment from completion.
 
 Known limits include partial oracle availability, a small selected benchmark,
 name-based rather than full type-aware static checking, dependency ranges and
-mocked rather than live PR API tests. No frontend, production deployment or
+limited automated coverage of external APIs. No frontend, production deployment or
 automatic merge service is claimed. The charter, timeline, technical report,
 walkthrough and saved verification artifacts support the working demonstration.

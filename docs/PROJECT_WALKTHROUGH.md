@@ -4,6 +4,11 @@ An explanation of the current implementation and recorded results, checked
 against the source on 8 October 2026. This guide explains the system; it does
 not describe a new evaluation or change the completed experiment.
 
+Hosted integration was completed later on the same date. See
+`docs/LIVE_EVIDENCE.md` for current Actions/PR links, the tested correction and
+named-tool availability limitations. Earlier pending-integration descriptions
+below describe the preceding local build state.
+
 ## 1. The problem we are solving
 
 A language model can remember an API from a different library version. For
@@ -69,7 +74,7 @@ agent that keeps making edits until tests pass.
 | pytest | Automated regression and integration tests | `tests/` |
 | coverage.py | Measures which core source statements tests exercised | Coverage JSON/report |
 | Ruff | Detects selected Python style errors and likely coding mistakes | Local checks/CI |
-| Git/GitHub Actions | Source history and hosted checks on pushes/PRs | Workflow implemented; hosting pending |
+| Git/GitHub Actions | Source history and hosted checks on pushes/PRs | Hosted baseline and actual red/green PR verified; see live evidence |
 | GitHub CLI | Reads PR files and explicitly posts repair comments | `scripts/pr_repair.py` |
 | JSONL/JSON | Appendable answer records, caches and metadata | `results/`, `experiment/` |
 | CSV/Markdown | Analysis exports and human-readable reports | `results/` |

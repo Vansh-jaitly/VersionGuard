@@ -20,7 +20,11 @@ RESULT_FILES = ('report-dev.md', 'report-test.md', 'summary-dev.csv', 'summary-t
                 'dev-qwen2.5_7b-instruct.jsonl', 'dev-qwen2.5_7b-instruct.meta.json',
                 'test-qwen2.5_7b-instruct.jsonl', 'test-qwen2.5_7b-instruct.meta.json',
                 'coverage-baseline.json', 'repair-demo-initial.json', 'repair-demo.json',
-                'repair-demo-verification.json', 'guard-demo.json', 'coverage-integration.json', 'integration-validation.md')
+                'repair-demo-verification.json', 'guard-demo.json', 'coverage-integration.json', 'integration-validation.md',
+                'rag-demo.json', 'live-pr-repair.json', 'live-pr-repair.md', 'live-pr-verification.json',
+                'tool-availability/qodo-response.txt', 'tool-availability/qodo-prompt.txt',
+                'tool-availability/qodo-raw.log', 'live-pr-guard-failure.log',
+                'verification/summary.json', 'verification/tests.log', 'verification/coverage.json')
 
 
 def selected_files(root: Path) -> list[Path]:

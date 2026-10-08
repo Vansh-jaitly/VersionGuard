@@ -2,21 +2,22 @@
 
 **Audience:** Senior engineering review  
 **Date:** 8 October 2026, Asia/Calcutta  
-**Scope:** Current local implementation, completed Qwen evaluation, integration
+**Scope:** Current implementation, completed Qwen evaluation, hosted integration
 verification, teammate handoff and remaining delivery work.
 
 ## 1. Engineering assessment
 
 VersionGuard is a working CLI research prototype with a complete first-model
 evaluation and implemented integration tooling. The core build phase is
-complete. The project is currently at cross-machine and hosted-integration
-validation, rather than final delivery or production readiness.
+complete. Hosted CI and the PR demonstration are verified. Second-model
+evaluation and named-tool rubric evidence remain outstanding.
 
 The application can retrieve documentation for a pinned library version,
 propose code or repairs using local Ollama, flag selected invalid library calls,
 execute benchmark answers in pinned Docker environments, and produce paired
 statistical reports. GitHub CI and a local PR repair-comment path are written
-and tested locally. A verified delivery ZIP has been produced, and the user
+and verified on GitHub. `docs/LIVE_EVIDENCE.md` contains actual run/comment links
+and independent verification outcomes. A delivery ZIP has been produced, and the user
 reports having sent the teammate work. Receipt and execution by the teammate
 have not been independently verified.
 
@@ -37,12 +38,13 @@ performs better.
 | Six-condition evaluation runner | Complete | Full Qwen dev and held-out test runs |
 | Standalone repair command | Complete | Independent repaired NumPy example tested in Docker |
 | Reporting and result import | Complete | Qwen validation and report reproduction; second-model import pending |
-| GitHub Actions workflow | Implemented | YAML parsed and steps exercised locally; hosted run pending |
-| PR repair preview/posting helper | Implemented | API behavior tested with mocks; live posting pending |
-| Teammate delivery archive | Complete | 83 files checksum-verified; user reports work sent |
+| GitHub Actions workflow | Verified hosted | Green baseline and red/green guard PR; see live evidence |
+| PR repair preview/posting helper | Verified live | Commit-specific Qwen comment posted; wrong proposal preserved and independently tested |
+| Teammate delivery archive | Revised | Evaluation-only scope; earlier 83-file archive sent according to user |
 | CodeLlama 7B evaluation on teammate Mac | Assigned | Results not received |
-| Qodo and Sweep evidence | Pending | No generated-test improvement or Sweep PR claimed |
-| Final combined report and presentation | Pending | Qwen report exists; combined results and external evidence pending |
+| Qodo and Sweep evidence | Attempted; external limitations | Qodo CLI discontinued notice; two legacy Sweep app names returned 404; rubric items unmet |
+| Submission documents | Complete for current evidence | Charter, timeline, brief progress report, demo guide and contribution disclosure |
+| Final combined report and presentation | Pending | Requires teammate results and student rehearsal/presentation |
 
 ## 3. Architecture and implemented behavior
 
@@ -202,7 +204,7 @@ documentation is not uniformly helpful across this small selection.
 
 ## 5. Verification and fixes
 
-Latest full local verification: **89 tests passed and 2 subtests passed** in
+Latest full local verification: **92 tests passed and 2 subtests passed** in
 the project virtual environment, plus Ruff. Core coverage is 69% rounded
 (68.91%); configured coverage includes `versionguard/` and `experiment/`, not
 helper scripts. Guard coverage is 85%, report 94% and code parsing 95%.
@@ -210,8 +212,10 @@ Fetch/selection and some documentation/executor paths have lower automated
 coverage; real preparation and Docker runs provide additional operational
 evidence, not replacement unit coverage.
 
-The GitHub workflow YAML parsed successfully, and its lint, test, fixture and
-guard steps were exercised locally. The scripted fixture run produced all 36
+The GitHub workflow passed on a fresh Ubuntu checkout, including lint, tests,
+coverage, fixture report and guard demonstration. Its first run exposed an
+import test that required locally downloaded benchmark data; a temporary
+synthetic input now makes the test independent. The fixture run produced all 36
 expected cells. That synthetic result verifies the pipeline and is not model
 performance evidence.
 
@@ -240,15 +244,18 @@ The CI workflow has read-only repository permissions, Python 3.12, pinned NumPy
 for the demo, coverage artifacts and changed-file guard checks. Changed-file
 selection preserves spaces and covers application directories; expected-invalid
 tests/fixtures are excluded from that scan and covered by tests. Hosted
-execution and branch protection are not yet verified.
+execution is verified with actual red/green run links. Main is not branch-protected.
 
 The local PR repair helper uses GitHub CLI to fetch a regular Python file at a
 fixed PR head, invokes the existing bot and writes Markdown/JSON previews.
 Explicit `--post` rechecks the head and creates or updates the authenticated
 user's marked VersionGuard comment. PR code is not checked out or executed.
 Tests cover stale-head rejection, preview persistence, owned-comment updates,
-path traversal and model Markdown containment. Network/API behavior is mocked;
-no actual posting is yet evidenced. This is a maintainer-operated local path,
+path traversal and model Markdown containment. Live posting is evidenced by
+PR #1's commit-specific comment. Qwen proposed `np.isscalar(array)`, which the
+guard accepted but Docker tests rejected for wrong output. The reviewed
+`array.item()` correction passed Python 3.12 / NumPy 1.26.4 Docker checks and
+hosted CI. This is a maintainer-operated local path,
 not automatic hosted repair or an automatic patch/merge service.
 
 The teammate ZIP contains 83 checksum-verified files. A fresh-directory
@@ -263,32 +270,34 @@ are not guaranteed. Matching parameter count does not control training data,
 architecture, quantization or inference behavior. Model digests must be retained.
 Mac inference timing must be reported separately from Windows timing.
 
-The user has reported sending the teammate work. No second-model files or
-external verification evidence have been returned yet. The original local
-checkout still has untracked source and no configured Git remote; a committed,
-hosted source baseline remains a delivery prerequisite.
+The user has reported sending earlier teammate work. The revised scope is only
+CodeLlama environment verification and evaluation (`docs/EVALUATION_ONLY.md`).
+No second-model files have been returned yet. The source is committed and
+published at https://github.com/Vansh-jaitly/VersionGuard. All hosted links are
+indexed in `docs/LIVE_EVIDENCE.md`. Qodo Command 0.36.0 was installed,
+authenticated and attempted with an approved isolated input, but the actual
+service returned a discontinued notice and generated no tests. Sweep's official
+README points to JetBrains; checked GitHub app names `sweep` and `sweep-ai`
+returned 404. These named-tool requirements remain unmet.
 
 ## 7. Remaining work and acceptance criteria
 
 | Priority | Work | Responsible party | Completion evidence |
 |---|---|---|---|
-| P0 | Establish a hosted, committed source baseline | Project owner with teammate | Repo URL, source commit, frozen split/cache included |
 | P0 | Verify pinned environments on Mac | Teammate | All selected references pass; mismatches resolved before model evaluation |
 | P0 | CodeLlama dev smoke and full test evaluation | Teammate | Standard JSONL + metadata, 40 tasks, 240 unique test cells, no environment errors |
 | P0 | Validate returned results and merge report | Core owner | Import validation succeeds; complete two-model report generated |
-| P1 | Run hosted CI and protect main | Teammate/project owner | Green Actions run and configured required check |
-| P1 | Demonstrate guard failure and corrected pass | Teammate | Real PR URL, line annotation, red/green screenshots |
-| P1 | Exercise live repair preview/post flow | Teammate | Saved preview and posted commit-specific comment; no claim of unrun tests |
 | P1 | Inspect failures across models | Both | Task IDs, proposed code, actual errors and explained categories |
-| P1 | Final technical/progress report and slides | Both | Two-model tables, uncertainty, limitations and demo evidence |
-| P2 | Qodo tests and coverage comparison | Teammate | Generated-test provenance, kept/discarded counts, comparable before/after run |
-| P2 | Sweep integration | Teammate | Actual Sweep PR and CI evidence, or recorded installation limitation |
+| P1 | Final combined report and student presentation | Project owner | Validated two-model tables, uncertainty and demo evidence; current submission docs complete |
+| P2 | Named-tool tests and coverage comparison | Project owner | Supported tool or instructor-approved alternative, actual generation and comparable coverage |
+| P2 | Sweep rubric evidence | Project owner | Supported integration or instructor acceptance of documented availability limitation |
 
 Current scope does not require another Qwen test run. Returned CodeLlama data
 must match the registered settings and fixed input hashes. The existing
 validator checks these and refuses conflicting result overwrites. Hosted
-credentials and repository access are needed for external integration; no
-extra application implementation is required to start those validations.
+access is established. Remaining named-tool work depends on supported services
+or an instructor-approved alternative. Optional main branch protection remains
+a hardening choice, not a completed control.
 
 ## 8. Residual limits and follow-on engineering
 
@@ -310,9 +319,9 @@ extra application implementation is required to start those validations.
    limitation rather than fabricating provenance. Requirements use ranges and
    Docker base tags are not immutable image digests, so stronger dependency and
    image locking is a future hardening task.
-5. **Integration evidence:** Windows checks do not prove Linux hosted behavior
-   or Mac Docker compatibility. Mocked PR tests do not establish authenticated
-   API behavior. Live checks are the next acceptance gate.
+5. **Integration evidence:** Linux hosted checks and actual PR posting are now
+   verified. They do not establish Mac Docker compatibility or comprehensive
+   handling of every external API failure. Qodo/Sweep rubric evidence is incomplete.
 6. **Product scope:** the tool is a CLI prototype. It has no web application,
    automatic repair execution, automatic commits/merges or deployed service.
    Static cleanliness and a proposed repair must not be presented as a tested
@@ -336,12 +345,13 @@ Paths are relative to the project root.
 | Reports and exports | `results/report-dev.md`, `results/report-test.md`, summary/comparison/failure CSVs |
 | Repair and guard demonstrations | `results/repair-demo*.json`, `results/guard-demo.json` |
 | Integration verification | `results/integration-validation.md` |
+| Hosted Actions/PR evidence and tool limitations | `docs/LIVE_EVIDENCE.md`, `results/live-pr-*.json`, `results/tool-availability/` |
 | Coverage before/after integration | `results/coverage-baseline.json`, `results/coverage-integration.json` |
 | CI | `.github/workflows/ci.yml`, `requirements-ci.txt` |
 | Teammate assignment | `docs/HANDOFF.md`, `docs/TEAMMATE.md` |
 | Delivery | `deliverables/VersionGuard-teammate.zip`; manifest inside ZIP |
 
-This report was prepared from current source, saved verification evidence,
-result metadata and a read-only audit of task/cell counts. No evaluations or
-full test suites were rerun while preparing it. The report is a new local
-artifact and is not included in the already-sent delivery archive.
+This report was updated from source, saved verification, actual hosted runs,
+PR comments and tool-service responses. Frozen Qwen benchmark cells were not
+rerun. The current regenerated delivery includes this report; the user's earlier
+sent archive is a historical package, not proof of delivery of this revision.

@@ -1,0 +1,8 @@
+Tool: official @qodo/command 0.36.0
+Attempt: 2026-10-08T10:43:36Z, authenticated, isolated input, read-only filesystem
+Generated tests: 0
+Source: actual Qodo service response, transcribed from saved local CLI log
+
+As mentioned in the email you received, Qodo Command has been discontinued. You can still get automated code reviews by connecting your Git provider at https://app.qodo.ai. We support GitHub, Bitbucket, GitLab, and Azure DevOps with automatic reviews on every pull request. For any questions or feedback, feel free to reach out to us at feedback@qodo.ai
+
+Official npm metadata: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.

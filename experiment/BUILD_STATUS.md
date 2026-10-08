@@ -1,8 +1,9 @@
 # Build status and handoff
 
 Updated 2026-10-08. The core implementation and first model evaluation are
-complete. CI and local PR repair integration are implemented; the project still
-needs the second model and hosted integration/demo evidence.
+complete. Hosted CI and live PR repair integration are verified. The project
+still needs the second model and named-tool rubric evidence. See
+`docs/LIVE_EVIDENCE.md` for actual links and external-service limitations.
 
 ## Completed evaluation
 
@@ -68,7 +69,7 @@ separate experiment; do not overwrite these results to improve the score.
 
 ## Verification and independent repair demonstration
 
-On Python 3.12: `79 passed, 2 subtests passed`; Ruff passes. Coverage is 69%
+On Python 3.12: `92 passed, 2 subtests passed`; Ruff passes. Coverage is 69%
 overall (guard 85%, report 94%, parsing 95%). The machine-readable baseline is
 `results/coverage-baseline.json`; it is a baseline for future generated tests,
 not a measured Qodo improvement.
@@ -88,36 +89,24 @@ checking honestly reports `not_checked` for this pinned 1.25.0 example.
 
 ## Next stage
 
-Integration stage verification: 89 tests and 2 subtests pass, lint passes,
-core coverage is 69%, the 36-cell fixture pipeline and pinned guard demo pass,
-and the delivery archive reproduces the frozen Qwen report from a fresh
-directory. See `results/integration-validation.md`. PR API behavior is tested
-with mocks; hosted GitHub evidence remains pending.
+Completion verification: 92 tests and 2 subtests pass, lint passes, core
+coverage is 69%, and the 36-cell fixture pipeline and pinned guard demo pass.
+Hosted baseline CI is green. PR #1 has actual red/green checks and a posted
+commit-specific local Qwen repair comment. Independent NumPy 1.26.4 Docker
+checks reject Qwen's static-clean `np.isscalar` proposal and accept the reviewed
+`array.item()` correction. Source and evidence are published on GitHub.
 
-1. Share the source, fixed split and retrieval cache with the teammate. No Git
-   remote or commits are configured in this checkout yet, so nothing has been
-   published or sent. The benchmark data can be fetched independently.
-2. The teammate verifies preparation on their laptop and runs the installed
-   `codellama:7b-instruct` model there, using the same settings. This is the
-   selected approximately same-size, code-focused comparison to Qwen. Use
-   development tasks for the initial smoke check, then run the held-out test
-   once. Return model JSONL and metadata and merge them through the report
-   command. Do not rerun Qwen under its `qwen2.5:7b` alias: both tags identify
-   the same local model.
-3. `.github/workflows/ci.yml` now covers lint, tests, coverage, the fixture
-   pipeline, a NumPy guard demo and changed application files. Verify a hosted
-   PR and capture the removed-API failure and corrected pass. No live Actions
-   run exists yet.
-4. `scripts.pr_repair` now creates a comment preview via the existing bot
-   command from a PR file at a fixed commit. Explicit `--post` checks that head
-   again and creates/updates only the authenticated user's VersionGuard
-   comment. PR source is not checked out or executed. Live posting is pending.
-5. Generate and review Qodo tests, then compare coverage against the saved
-   baseline. Record kept/discarded counts and reasons. Current tests were not
-   produced by Qodo and should not be presented as such.
-6. Attempt the Sweep integration after the repository is hosted; save actual
-   results or the installation limitation. Collect screenshots, inspect failure
-   examples and prepare the report/slides around the measured findings.
+1. The teammate verifies Mac environments and evaluates only
+   `codellama:7b-instruct` with the fixed settings. See `docs/EVALUATION_ONLY.md`.
+2. Validate returned JSONL/metadata with `scripts.import_results`, then produce
+   a complete combined report. Do not rerun Qwen under its equivalent alias.
+3. Resolve the named-tool rubric gaps through supported access or an
+   instructor-approved alternative. Authenticated Qodo Command returned a
+   discontinued-service notice and generated zero tests. Sweep's README points
+   to JetBrains, and both checked legacy GitHub app names returned 404.
+4. Rehearse the working demo and explain the measured uncertainty. Submission
+   documents, revised scope and current evidence are ready. No unaided student
+   authorship, Qodo improvement, Sweep PR or production deployment is claimed.
 
 The user authorized implementing the next stage before teammate delivery.
 `scripts.teammate_bundle` packages a curated archive with checksums, and
@@ -126,5 +115,6 @@ inputs/settings before copying. Cross-model reporting also checks generation
 settings and Ollama versions. The original coverage baseline is preserved.
 See `docs/HANDOFF.md` for the current handoff instructions.
 
-No second model, live Actions/PR comment, Qodo or Sweep result is claimed as
-completed. Nothing has been published or sent externally.
+No second-model evaluation, named-tool test generation or Sweep PR is claimed
+complete. Hosted Actions and actual repair posting are complete; user reports
+having sent an earlier teammate archive.

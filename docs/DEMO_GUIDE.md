@@ -13,7 +13,9 @@ python -m scripts.rag_demo --retriever vector
 Inspect `results/rag-demo.json`: question, retrieved source names, answer,
 static guard status and pinned Docker test outcome. Explain that LangChain/Chroma
 handles retrieval even if Ollama generation uses its HTTP fallback. A static
-version mismatch is `not_checked`, not a fabricated clean check.
+version mismatch is `not_checked`, not a fabricated clean check. The saved
+vector demonstration retrieved unrelated sources despite a passing answer;
+explain that retrieval quality remains a limitation.
 
 ## 2. Removed API and correction
 
@@ -45,10 +47,13 @@ Fixtures use scripted models; their high pass rate is not Qwen performance.
 
 ## 5. Actual GitHub evidence
 
-Show repository commit, Actions run, guard-failing/fixed PR and repair comment
-only when actually available. PR repair uses local Ollama and explicit posting;
+Open the actual links in `docs/LIVE_EVIDENCE.md`: green baseline, PR #1, red
+guard run, Qwen comment and corrected green run. PR repair uses local Ollama and explicit posting;
 it does not deploy or automatically merge code. Sweep and named AI-test generation
-must have their own real provenance, not manually labeled substitute output.
+must have their own real provenance. Current named-tool availability limitations
+are recorded; those rubric items are not claimed complete. Show
+`results/live-pr-verification.json`: the model's static-clean proposal failed,
+while the reviewed correction passed independently in Docker.
 
 ## 6. Evaluation conclusion
 

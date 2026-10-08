@@ -1,0 +1,29 @@
+{
+  "kind": "standalone_demo_not_benchmark",
+  "executor": "docker",
+  "environment": "py312-numpy-1-26-4-915421676c",
+  "source_head": "f9b1848b17b8a6fb2d6ddff636dd8e822053db14",
+  "model": "qwen2.5:7b-instruct",
+  "checks": "\nvalue = as_scalar(np.array([42], dtype=np.int64))\nassert value == 42 and type(value) is int\nvalue = as_scalar(np.array([2.5], dtype=np.float64))\nassert value == 2.5 and type(value) is float\nassert as_scalar(np.array([[7]])) == 7\ntry:\n    as_scalar(np.array([1, 2]))\nexcept ValueError:\n    pass\nelse:\n    raise AssertionError('multiple elements must be rejected')\nprint('Docker scalar checks passed')\n",
+  "proposals": {
+    "model": {
+      "code": "import numpy as np\n\ndef as_scalar(array: np.ndarray):\n    return np.isscalar(array)",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/work/prog.py\", line 9, in <module>\n    assert value == 42 and type(value) is int\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "timed_out": false,
+      "duration_ms": 1616.5079000056721,
+      "passed": false
+    },
+    "reviewed": {
+      "code": "import numpy as np\n\n\ndef as_scalar(array: np.ndarray):\n    return array.item()\n",
+      "returncode": 0,
+      "stdout": "Docker scalar checks passed\n",
+      "stderr": "",
+      "timed_out": false,
+      "duration_ms": 1159.4383000046946,
+      "passed": true
+    }
+  },
+  "reviewed_correction_passed": true
+}

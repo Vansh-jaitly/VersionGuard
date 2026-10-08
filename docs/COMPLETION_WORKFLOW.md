@@ -8,16 +8,16 @@ and returning its results, metadata and environment-verification log.
 
 ## Work sequence
 
-| Stage | Action | Acceptance evidence | Initial status |
+| Stage | Action | Acceptance evidence | Current status |
 |---|---|---|---|
-| 1 | Revise ownership and handoff | Teammate instructions only require the second evaluation | In progress |
-| 2 | Create one local verification entry point | Lint, full tests, fixture report and guard demo run; artifacts saved | Planned |
-| 3 | Demonstrate the real RAG bot and repair | Qwen answer, retrieved sources, guard findings and pinned Docker outcome | Planned |
-| 4 | Provide generated-test workflow | Accepted tool provenance, reviewed tests and comparable coverage reports | Access investigation |
-| 5 | Finish assessment documents | Charter, progress timeline, concise report, demo guide and contribution log | Planned |
-| 6 | Host source and run Actions | Source commit, repository URL and actual green Actions run | Repository details required |
-| 7 | Demonstrate a failing and fixed PR | Actual annotations and red/green CI run links | Depends on stage 6 |
-| 8 | Run live PR repair and Sweep | Actual posted repair, Sweep PR or documented availability limitation | Depends on tool access and stage 6 |
+| 1 | Revise ownership and handoff | `docs/EVALUATION_ONLY.md` | Complete |
+| 2 | Create one local verification entry point | `scripts.verify`; saved successful checks, 92 tests + 2 subtests | Complete |
+| 3 | Demonstrate the real RAG bot and repair | Saved real answer and independent Docker outcomes; retrieval weaknesses disclosed | Complete within documented limits |
+| 4 | Provide generated-test workflow | Prompt and comparable coverage helper; actual Qodo service notice | Generation blocked: CLI discontinued |
+| 5 | Finish assessment documents | Charter, timeline, report, demo guide, contribution log and live evidence | Complete; final rehearsal is personal work |
+| 6 | Host source and run Actions | Published main and actual green Actions run | Complete |
+| 7 | Demonstrate a failing and fixed PR | PR #1; actual VG001 annotation and red/green run links | Complete |
+| 8 | Run live PR repair and Sweep | Commit-specific repair comment posted; legacy Sweep access limitation recorded | Repair complete; Sweep rubric evidence pending |
 | 9 | Import CodeLlama results when returned | Validation succeeds and complete combined report generated | Teammate evaluation pending |
 
 ## Scope and fixed research inputs
@@ -43,5 +43,6 @@ PR repair is a local maintainer command, not automatic deployment or merging.
 - Individual contribution: concrete reviewed/tested work with attributable history;
   AI assistance is disclosed rather than attributed as unaided student authorship.
 
-External actions await the required repository/account access. Tool-authored
-evidence must come from the actual named tool, not manually fabricated labels.
+See `docs/LIVE_EVIDENCE.md` for verified hosted links and external-tool findings.
+Named-tool requirements need supported access or an instructor-approved
+alternative. Tool-authored evidence must come from the actual named tool.

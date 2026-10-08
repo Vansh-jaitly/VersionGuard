@@ -1,0 +1,29 @@
+{
+  "repo": "Vansh-jaitly/VersionGuard",
+  "pr": 1,
+  "source": "demo/pr_example.py",
+  "head_sha": "f9b1848b17b8a6fb2d6ddff636dd8e822053db14",
+  "model": "qwen2.5:7b-instruct",
+  "answer": {
+    "answer": "```python\nimport numpy as np\n\ndef as_scalar(array: np.ndarray):\n    return np.isscalar(array)\n```\nFunctions relied on: `numpy.isscalar`",
+    "library": "numpy",
+    "version": "1.26.4",
+    "sources": [
+      "numpy.get_include",
+      "numpy.ctypeslib.load_library",
+      "numpy.where"
+    ],
+    "metrics": {
+      "input_tokens": 1051,
+      "output_tokens": 37,
+      "total_duration_ms": 15093.3663,
+      "eval_duration_ms": 2800.81,
+      "prompt_eval_duration_ms": 1969.655
+    },
+    "latency_ms": 15103.8,
+    "guard": {
+      "status": "clean",
+      "findings": []
+    }
+  }
+}

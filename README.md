@@ -33,6 +33,13 @@ written before any test run.
 
 ## Current build status
 
+Source is hosted at [Vansh-jaitly/VersionGuard](https://github.com/Vansh-jaitly/VersionGuard).
+Baseline Actions and the corrected demo PR are green; the earlier red PR and
+actual Qwen repair comment are preserved. See [live evidence](docs/LIVE_EVIDENCE.md).
+Named-tool rubric gaps remain: Qodo Command returned a discontinued-service
+notice, and legacy Sweep GitHub app access was not established. The teammate's
+only remaining assignment is [CodeLlama evaluation](docs/EVALUATION_ONLY.md).
+
 The Qwen evaluation is complete on this Windows laptop using
 `qwen2.5:7b-instruct` and real Docker environments: 20 development tasks
 (120 condition records, 12.2 minutes) and 40 held-out test tasks
@@ -46,7 +53,7 @@ logs and repair with logs plus documentation both pass 55.0%. There are 18
 legitimate skipped oracle cells because reference API documentation could not
 be matched. These skips are recorded, not counted as model failures.
 
-Validation: 89 tests and 2 subtests pass, lint passes, and core coverage is
+Validation: 92 tests and 2 subtests pass, lint passes, and core coverage is
 69%. A standalone repair of `np.asscalar` to `array.item()` also passes in
 Docker with NumPy 1.25.0; the initial hallucinated `np.item` proposal and its
 failure are preserved in [demo verification](results/repair-demo-verification.json).
@@ -54,8 +61,9 @@ This demonstration is separate from the benchmark.
 
 GitHub CI, a local guard demo, PR repair comment preview/posting, validated
 second-model result import and teammate ZIP packaging are implemented.
-The second laptop's model run, hosted Actions/PR demonstration, Qodo coverage
-comparison, Sweep demonstration and presentation are still pending.
+Hosted Actions and the red/green PR demonstration are complete. The second
+laptop's model run, named-tool test-generation/Sweep rubric evidence and student
+presentation remain pending; actual tool limitations are documented.
 See [build status and handoff](experiment/BUILD_STATUS.md).
 Local integration evidence is in [integration verification](results/integration-validation.md).
 

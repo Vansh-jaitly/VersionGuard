@@ -2,8 +2,10 @@
 
 This rubric item requires the actual accepted CodiumAI/Qodo or Codeium tool.
 Existing project-authored tests and tests written by this coding assistant do
-not establish that requirement. Qodo/Codeium was not installed in the inspected
-VS Code extension list on 8 October 2026; CLI availability is being checked.
+not establish that requirement. Official Qodo Command 0.36.0 was installed and
+authenticated on 8 October 2026. The actual service returned a discontinued notice;
+zero tests were generated. See `docs/LIVE_EVIDENCE.md` and
+`results/tool-availability/qodo-response.txt`. This requirement remains unmet.
 
 ## Comparable measurement
 
@@ -40,4 +42,7 @@ which observable behavior each test verifies. Avoid duplicating existing tests.
 | Before/after coverage and logs | Equivalent interpreter, scope and command |
 | Tool-authorship status | Verified only after real generation |
 
-No tool-generated-test claim is currently made by this document.
+The attempted prompt is saved in `results/tool-availability/qodo-prompt.txt`.
+No before/after Qodo coverage improvement or tool-generated-test claim is made.
+Once a supported named tool is available, establish a fresh baseline at the same
+source revision; the old 69% reports alone do not establish a comparable improvement.

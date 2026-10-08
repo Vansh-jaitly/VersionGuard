@@ -7,12 +7,12 @@ Dates below distinguish recorded completion from targets, not invented history.
 |---|---|---|---|
 | 1. Skeleton and command contract | Complete | Three core CLI commands and fixture tasks | Preserve interface |
 | 2. Loader, environments and baseline conditions | Complete | Fixed dataset/split; 60 reference checks; Docker runs | Teammate verifies Mac environments |
-| 3. Lookup and oracle conditions | Complete | LangChain/Chroma retrieval and frozen per-task cache | Demonstrate live RAG bot |
-| 4. Repair and guard | Complete locally | Static guard, repair proposal, Docker demo, regression tests | Exercise on hosted PR |
+| 3. Lookup and oracle conditions | Complete | Frozen cache and actual vector RAG demo; irrelevant retrieval disclosed | Preserve findings |
+| 4. Repair and guard | Complete integration demonstration | Actual PR annotation/comment and independent Docker verification | Review model proposals before use |
 | 5. Full models and reporting | Qwen complete on 8 Oct; CodeLlama pending | 120 dev and 240 test cells; reports/metadata | Teammate returns CodeLlama files |
-| 6. Workflow and automation | CI and PR helpers implemented | Workflow, local checks, mocked API tests | Hosted run, failing/fixed PR and Sweep evidence |
-| 7. AI-generated tests | Access/provenance work pending | Existing authored tests and coverage baseline | Actual accepted-tool output and equivalent coverage comparison |
-| 8. Documents and demo rehearsal | Implementation in current phase | Charter, timeline, progress report, demo guide | Final evidence review and rehearsal by 9 Oct, subject to access |
+| 6. Workflow and automation | Hosted CI and PR demo complete; Sweep access unresolved | Actual green baseline, red/green PR and posted repair | Supported Sweep access or accepted alternative |
+| 7. AI-generated tests | Attempted; service discontinued | Qodo authenticated response, zero generated tests | Supported named tool and comparable coverage evidence |
+| 8. Documents and demo rehearsal | Submission documents complete | Charter, timeline, progress report, demo guide and live evidence | Student rehearsal by 9 Oct |
 
 ## Current work order
 
@@ -32,7 +32,7 @@ and understanding; assigned work is not evidence of completion.
 
 ## Dependencies and progress reporting
 
-Hosted CI/PR automation depends on authenticated repository access. Named-tool
-evidence depends on the actual tool/account being available. Qwen data and core
+GitHub access is established and hosted checks passed. Named-tool
+evidence depends on a supported tool/service being available. Qwen data and core
 prototype do not depend on the teammate's speed. Target dates are not guarantees:
 leave unresolved steps marked pending rather than presenting them as completed.

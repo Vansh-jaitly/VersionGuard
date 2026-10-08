@@ -1,0 +1,17 @@
+checks	Guard on changed application files	﻿2026-10-08T10:43:20.5592835Z ##[group]Run python -m scripts.guard_changed
+checks	Guard on changed application files	2026-10-08T10:43:20.5593228Z ^[[36;1mpython -m scripts.guard_changed^[[0m
+checks	Guard on changed application files	2026-10-08T10:43:20.5653772Z shell: /usr/bin/bash -e {0}
+checks	Guard on changed application files	2026-10-08T10:43:20.5654018Z env:
+checks	Guard on changed application files	2026-10-08T10:43:20.5654277Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+checks	Guard on changed application files	2026-10-08T10:43:20.5654713Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+checks	Guard on changed application files	2026-10-08T10:43:20.5655165Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+checks	Guard on changed application files	2026-10-08T10:43:20.5655561Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+checks	Guard on changed application files	2026-10-08T10:43:20.5655944Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+checks	Guard on changed application files	2026-10-08T10:43:20.5656327Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+checks	Guard on changed application files	2026-10-08T10:43:20.5656692Z   VG_BASE_SHA: 5135023fd91d40b8a18b7469ecdf68ed8b7e07f4
+checks	Guard on changed application files	2026-10-08T10:43:20.5657022Z   VG_HEAD_SHA: f9b1848b17b8a6fb2d6ddff636dd8e822053db14
+checks	Guard on changed application files	2026-10-08T10:43:20.5657309Z ##[endgroup]
+checks	Guard on changed application files	2026-10-08T10:43:20.8312006Z demo/pr_example.py:5:12: VG001 'numpy' has no attribute 'asscalar' in numpy 1.26.4. Did you mean 'isscalar'?
+checks	Guard on changed application files	2026-10-08T10:43:20.8333047Z ##[error]'numpy' has no attribute 'asscalar' in numpy 1.26.4. Did you mean 'isscalar'?
+checks	Guard on changed application files	2026-10-08T10:43:20.8339765Z versionguard: 1 file(s) checked, 1 error(s), 0 warning(s)
+checks	Guard on changed application files	2026-10-08T10:43:20.8559977Z ##[error]Process completed with exit code 1.

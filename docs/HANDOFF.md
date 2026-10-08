@@ -65,7 +65,9 @@ preserved. Expected-invalid test/fixture files are checked by tests instead of
 the changed-file guard. NumPy 1.26.4 is pinned for the demo.
 
 CI can be exercised locally without Ollama or Docker. Hosted evidence needs a
-GitHub repository: no remote exists in the original checkout. Push the source,
+Historical handoff note (superseded by `docs/LIVE_EVIDENCE.md`): the original
+checkout initially had no remote. The source is now published and hosted checks
+are verified. The broader workflow below is retained as historical context; push the source,
 verify the Actions run, and protect `main` with the `checks` job. Workflow
 permissions are read-only.
 
