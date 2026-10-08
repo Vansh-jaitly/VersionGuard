@@ -1,0 +1,21 @@
+{
+  "model": "codellama:7b-instruct",
+  "test_tasks": 40,
+  "test_cells": 240,
+  "duplicate_run_ids": 0,
+  "scored_cells": 222,
+  "inconsistent_scored_statuses": 0,
+  "oracle_skips": 18,
+  "invalid_skip_records": 0,
+  "carried_cells": 34,
+  "actual_generations": 188,
+  "environment_errors": 0,
+  "reference_log_ok_records": 60,
+  "reference_log_task_set_matches": true,
+  "standalone_import_validation": "passed",
+  "strict_combined_import_validation": "blocked: Ollama 0.32.15 vs 0.35.0",
+  "returned_core_source_raw_bytes_match": true,
+  "fixed_inputs_raw_bytes_match": true,
+  "qwen_test_raw_bytes_match": true,
+  "result": "accepted as independent Mac run; combined report provisional"
+}

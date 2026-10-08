@@ -1,5 +1,11 @@
 # Teammate Assignment: CodeLlama Evaluation Only
 
+**Delivery update, 8 October 2026:** The five-task dev smoke, complete held-out
+run and 60/60 reference log have been received. Standalone validation passes;
+combined comparison has an Ollama 0.32.15 versus 0.35.0 limitation. See
+[TEAMMATE_INTAKE.md](TEAMMATE_INTAKE.md). The instructions below are the original
+assignment, not a request to rerun the completed evaluation.
+
 This supersedes earlier instructions assigning CI, Sweep, AI tests or documents
 to the teammate. The project owner is completing those deliverables.
 

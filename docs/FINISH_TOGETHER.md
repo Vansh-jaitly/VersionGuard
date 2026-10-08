@@ -3,6 +3,11 @@
 Current status: 8 October 2026. Core code, first-model evaluation, hosted CI,
 red/green PR demonstration and submission documents are complete.
 
+Update: the teammate return is now audited and CodeLlama's nine repair gains
+independently replayed. The combined report retains its runtime mismatch.
+The user deferred Codeium/Windsurf work after editor login failed; do not
+restart that task until requested.
+
 ## 1. Actual Codeium/Windsurf tests
 
 Official extension `Codeium.codeium` 1.49.2 (Marketplace title: Windsurf Plugin,
@@ -56,6 +61,7 @@ assistant cannot certify them by generating this checklist.
 
 ## 4. Teammate result intake
 
-Only CodeLlama 7B verification/evaluation is assigned to the teammate. On return,
-validate its JSONL and matching metadata with `scripts.import_results` before
-importing or reporting combined results. No extra Qwen run is needed.
+CodeLlama's complete held-out run, smoke test and reference log are received.
+Standalone validation passes; the combined report is provisional due to Ollama
+0.32.15 versus 0.35.0. See `docs/TEAMMATE_INTAKE.md`. Original runs are preserved;
+no extra Qwen run is needed.

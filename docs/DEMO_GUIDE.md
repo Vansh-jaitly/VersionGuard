@@ -60,4 +60,9 @@ while the reviewed correction passed independently in Docker.
 Present the 40-task Qwen report: version 45%, lookup 52.5%, both repairs 55%.
 Neither primary documentation comparison meets the fixed success criterion.
 Explain confidence intervals and why a working prototype can coexist with an
-inconclusive research finding. CodeLlama results are pending from the teammate.
+inconclusive Qwen finding. Show CodeLlama's validated standalone report:
+42.5% log repair versus 65% docs repair, +22.5 points with interval [+10, +35].
+All nine documentation-assisted gains replayed in Docker. This meets the
+within-model rule. Disclose that the side-by-side report is provisional because
+the inference runtimes differ (Ollama 0.32.15 versus 0.35.0). See
+`docs/TEAMMATE_INTAKE.md` for the precise claim and limits.

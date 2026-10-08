@@ -1,0 +1,7 @@
+model,condition,n,passed,pass_rate
+codellama:7b-instruct,task_only,5,4,0.8
+codellama:7b-instruct,version,5,4,0.8
+codellama:7b-instruct,lookup,5,5,1.0
+codellama:7b-instruct,oracle,4,4,1.0
+codellama:7b-instruct,repair_log,5,4,0.8
+codellama:7b-instruct,repair_docs,5,4,0.8

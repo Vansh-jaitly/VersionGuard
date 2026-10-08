@@ -1,0 +1,104 @@
+model,example_id,condition,library,version,category,error_type,error_message,code,feedback
+codellama:7b-instruct,118,task_only,scipy,1.9.2,wrong_result,AssertionError,,"from scipy import stats
+import numpy as np
+
+def compute_circular_variance(a: np.ndarray) -> float:
+    """"""
+    Computes the circular variance of a 1-dimensional array.
+
+    The circular variance is defined as 1 - R, where R is the mean resultant vector.
+
+    Parameters
+    ----------
+    a : np.ndarray
+        A 1-dimensional array of complex numbers.
+
+    Returns
+    -------
+    float
+        The circular variance of the array.
+    """"""
+    # Compute the mean resultant vector
+    r = np.mean(np.abs(a))
+
+    # Compute the circular variance
+    return 1 - r
+",AssertionError: the function ran but returned a wrong result for the test input.
+codellama:7b-instruct,118,version,scipy,1.9.2,other_error,IndexError,invalid index to scalar variable.,"from scipy import stats
+import numpy as np
+
+def compute_circular_variance(a: np.ndarray) -> float:
+    """"""
+    Computes the circular variance of a 1-dimensional array.
+
+    Parameters
+    ----------
+    a : np.ndarray
+        The input array.
+
+    Returns
+    -------
+    float
+        The circular variance of the input array.
+    """"""
+    # Compute the mean resultant vector
+    r = np.mean(a, axis=0)
+
+    # Compute the circular variance
+    return 1 - np.corrcoef(a, rowvar=False)[0, 1]
+","Traceback (most recent call last):
+  File ""prog.py"", line 22, in compute_circular_variance
+    return 1 - np.corrcoef(a, rowvar=False)[0, 1]
+IndexError: invalid index to scalar variable."
+codellama:7b-instruct,118,repair_log,scipy,1.9.2,other_error,IndexError,invalid index to scalar variable.,"from scipy import stats
+import numpy as np
+
+def compute_circular_variance(a: np.ndarray) -> float:
+    """"""
+    Computes the circular variance of a 1-dimensional array.
+
+    Parameters
+    ----------
+    a : np.ndarray
+        The input array.
+
+    Returns
+    -------
+    float
+        The circular variance of the input array.
+    """"""
+    # Compute the mean resultant vector
+    r = np.mean(a, axis=0)
+
+    # Compute the circular variance
+    return 1 - np.corrcoef(a, rowvar=True)[0]
+","Traceback (most recent call last):
+  File ""prog.py"", line 22, in compute_circular_variance
+    return 1 - np.corrcoef(a, rowvar=True)[0]
+IndexError: invalid index to scalar variable."
+codellama:7b-instruct,118,repair_docs,scipy,1.9.2,other_error,IndexError,invalid index to scalar variable.,"from scipy import stats
+import numpy as np
+
+def compute_circular_variance(a: np.ndarray) -> float:
+    """"""
+    Computes the circular variance of a 1-dimensional array.
+
+    Parameters
+    ----------
+    a : np.ndarray
+        The input array.
+
+    Returns
+    -------
+    float
+        The circular variance of the input array.
+    """"""
+    # Compute the mean resultant vector
+    r = np.mean(a, axis=0)
+
+    # Compute the circular variance
+    return 1 - np.corrcoef(a, rowvar=True)[0]
+","Traceback (most recent call last):
+  File ""prog.py"", line 22, in compute_circular_variance
+    return 1 - np.corrcoef(a, rowvar=True)[0]
+IndexError: invalid index to scalar variable."

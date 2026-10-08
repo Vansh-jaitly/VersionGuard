@@ -38,7 +38,7 @@ Baseline Actions and the corrected demo PR are green; the earlier red PR and
 actual Qwen repair comment are preserved. See [live evidence](docs/LIVE_EVIDENCE.md).
 Named-tool rubric gaps remain: Qodo Command returned a discontinued-service
 notice, and legacy Sweep GitHub app access was not established. The teammate's
-only remaining assignment is [CodeLlama evaluation](docs/EVALUATION_ONLY.md).
+CodeLlama evaluation is returned and [audited](docs/TEAMMATE_INTAKE.md).
 
 The Qwen evaluation is complete on this Windows laptop using
 `qwen2.5:7b-instruct` and real Docker environments: 20 development tasks
@@ -53,6 +53,14 @@ logs and repair with logs plus documentation both pass 55.0%. There are 18
 legitimate skipped oracle cells because reference API documentation could not
 be matched. These skips are recorded, not counted as model failures.
 
+CodeLlama's independent Mac run also covers 40 test tasks and 240 records.
+Documentation-assisted repair improves from 42.5% to 65.0% (+22.5 points;
+95% interval [+10.0, +35.0]), meeting the registered within-model rule. All
+nine repair gains were independently replayed in Docker. Its
+[standalone report](results/incoming/codellama-mac/report-test.md) passes strict
+validation. The [combined report](results/model-comparison/report-test.md)
+remains provisional because CodeLlama used Ollama 0.32.15 and Qwen used 0.35.0.
+
 Validation: 92 tests and 2 subtests pass, lint passes, and core coverage is
 69%. A standalone repair of `np.asscalar` to `array.item()` also passes in
 Docker with NumPy 1.25.0; the initial hallucinated `np.item` proposal and its
@@ -61,8 +69,8 @@ This demonstration is separate from the benchmark.
 
 GitHub CI, a local guard demo, PR repair comment preview/posting, validated
 second-model result import and teammate ZIP packaging are implemented.
-Hosted Actions and the red/green PR demonstration are complete. The second
-laptop's model run, named-tool test-generation/Sweep rubric evidence and student
+Hosted Actions, the red/green PR demonstration and the second laptop's model run
+are complete. The runtime comparison limitation, named-tool rubric evidence and student
 presentation remain pending; actual tool limitations are documented.
 See [build status and handoff](experiment/BUILD_STATUS.md).
 Local integration evidence is in [integration verification](results/integration-validation.md).
@@ -72,7 +80,8 @@ Local integration evidence is in [integration verification](results/integration-
 Current mid-term work: [completion workflow](docs/COMPLETION_WORKFLOW.md),
 [charter](docs/CHARTER.md), [timeline](docs/TIMELINE.md),
 [brief progress report](docs/PROGRESS_REPORT.md) and [demo guide](docs/DEMO_GUIDE.md).
-The teammate's remaining scope is [CodeLlama evaluation only](docs/EVALUATION_ONLY.md).
+The teammate's [evaluation-only scope](docs/EVALUATION_ONLY.md) has been delivered;
+the [intake report](docs/TEAMMATE_INTAKE.md) records acceptance and limitations.
 The current shared completion steps are in [finish together](docs/FINISH_TOGETHER.md).
 Run all local integration checks with `.venv\Scripts\python.exe -m scripts.verify`.
 

@@ -1,5 +1,9 @@
 # Second person's task list
 
+**Return received, 8 October 2026:** CodeLlama data and verification logs are
+audited. See [TEAMMATE_INTAKE.md](TEAMMATE_INTAKE.md) for accepted independent
+results and the combined-runtime limitation. The assignment below is historical.
+
 **Scope update, 8 October 2026:** Your only remaining responsibility is the
 CodeLlama 7B evaluation. Follow [EVALUATION_ONLY.md](EVALUATION_ONLY.md).
 The project owner completes CI, Sweep, generated-test evidence and documents.

@@ -6,10 +6,10 @@ Dates below distinguish recorded completion from targets, not invented history.
 | Phase from original plan | Current progress | Evidence | Next action / target |
 |---|---|---|---|
 | 1. Skeleton and command contract | Complete | Three core CLI commands and fixture tasks | Preserve interface |
-| 2. Loader, environments and baseline conditions | Complete | Fixed dataset/split; 60 reference checks; Docker runs | Teammate verifies Mac environments |
+| 2. Loader, environments and baseline conditions | Complete | Fixed inputs; returned Mac log reports 60/60 references passing | Preserve verification evidence |
 | 3. Lookup and oracle conditions | Complete | Frozen cache and actual vector RAG demo; irrelevant retrieval disclosed | Preserve findings |
 | 4. Repair and guard | Complete integration demonstration | Actual PR annotation/comment and independent Docker verification | Review model proposals before use |
-| 5. Full models and reporting | Qwen complete on 8 Oct; CodeLlama pending | 120 dev and 240 test cells; reports/metadata | Teammate returns CodeLlama files |
+| 5. Full models and reporting | Both test runs complete; independent CodeLlama intake accepted | 240 test cells/model; 9/9 CodeLlama repair gains replayed | Disclose Ollama mismatch in provisional combined comparison |
 | 6. Workflow and automation | Hosted CI and PR demo complete; Sweep access unresolved | Actual green baseline, red/green PR and posted repair | Supported Sweep access or accepted alternative |
 | 7. AI-generated tests | Attempted; service discontinued | Qodo authenticated response, zero generated tests | Supported named tool and comparable coverage evidence |
 | 8. Documents and demo rehearsal | Submission documents complete | Charter, timeline, progress report, demo guide and live evidence | Student rehearsal by 9 Oct |
@@ -21,7 +21,8 @@ Dates below distinguish recorded completion from targets, not invented history.
 3. Capture red/green PR checks and review/post a repair proposal.
 4. Complete named-tool test-generation and Sweep evidence, or document concrete blockers.
 5. Assemble the mid-term submission and explain findings/limitations.
-6. Independently receive, validate and report CodeLlama results when returned.
+6. Completed: validate returned CodeLlama results and replay its repair gains.
+   Retain the combined report's inference-runtime version limitation.
 
 ## Ownership revision
 

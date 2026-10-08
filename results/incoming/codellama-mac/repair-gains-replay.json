@@ -1,0 +1,244 @@
+{
+  "kind": "independent_replay_not_new_model_evaluation",
+  "model_calls": 0,
+  "executor": "docker",
+  "tasks": [
+    {
+      "example_id": "129",
+      "environment": "py310-scipy-1-11-2-b084cec8f7",
+      "conditions": {
+        "repair_log": {
+          "recorded_passed": false,
+          "replayed_passed": false,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "fail",
+          "category": "wrong_result",
+          "feedback": "AssertionError: the function ran but returned a wrong result for the test input.",
+          "execution_ms": 2700.9
+        },
+        "repair_docs": {
+          "recorded_passed": true,
+          "replayed_passed": true,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "pass",
+          "category": "",
+          "feedback": "",
+          "execution_ms": 1462.3
+        }
+      }
+    },
+    {
+      "example_id": "130",
+      "environment": "py310-scipy-1-9-2-fde84a5fc5",
+      "conditions": {
+        "repair_log": {
+          "recorded_passed": false,
+          "replayed_passed": false,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "fail",
+          "category": "wrong_result",
+          "feedback": "AssertionError: the function ran but returned a wrong result for the test input.",
+          "execution_ms": 1777.3
+        },
+        "repair_docs": {
+          "recorded_passed": true,
+          "replayed_passed": true,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "pass",
+          "category": "",
+          "feedback": "",
+          "execution_ms": 1417.6
+        }
+      }
+    },
+    {
+      "example_id": "131",
+      "environment": "py310-scipy-1-11-2-b084cec8f7",
+      "conditions": {
+        "repair_log": {
+          "recorded_passed": false,
+          "replayed_passed": false,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "error",
+          "category": "other_error",
+          "feedback": "Traceback (most recent call last):\n  File \"prog.py\", line 18, in apply_percentile_filter\n    raise ValueError(\"The input must be a batched array with 4 dimensions.\")\nValueError: The input must be a batched array with 4 dimensions.",
+          "execution_ms": 1298.4
+        },
+        "repair_docs": {
+          "recorded_passed": true,
+          "replayed_passed": true,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "pass",
+          "category": "",
+          "feedback": "",
+          "execution_ms": 1389.5
+        }
+      }
+    },
+    {
+      "example_id": "132",
+      "environment": "py310-scipy-1-9-2-fde84a5fc5",
+      "conditions": {
+        "repair_log": {
+          "recorded_passed": false,
+          "replayed_passed": false,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "error",
+          "category": "other_error",
+          "feedback": "Traceback (most recent call last):\n  File \"prog.py\", line 18, in apply_percentile_filter\n    raise ValueError(\"The input must be a batched array with 4 dimensions.\")\nValueError: The input must be a batched array with 4 dimensions.",
+          "execution_ms": 1424.2
+        },
+        "repair_docs": {
+          "recorded_passed": true,
+          "replayed_passed": true,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "pass",
+          "category": "",
+          "feedback": "",
+          "execution_ms": 1413.1
+        }
+      }
+    },
+    {
+      "example_id": "139",
+      "environment": "py310-scipy-1-11-2-b084cec8f7",
+      "conditions": {
+        "repair_log": {
+          "recorded_passed": false,
+          "replayed_passed": false,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "fail",
+          "category": "wrong_result",
+          "feedback": "AssertionError: the function ran but returned a wrong result for the test input.",
+          "execution_ms": 1833.1
+        },
+        "repair_docs": {
+          "recorded_passed": true,
+          "replayed_passed": true,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "pass",
+          "category": "",
+          "feedback": "",
+          "execution_ms": 1342.4
+        }
+      }
+    },
+    {
+      "example_id": "184",
+      "environment": "py39-sympy-1-13-d53c8933b5",
+      "conditions": {
+        "repair_log": {
+          "recorded_passed": false,
+          "replayed_passed": false,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "error",
+          "category": "other_error",
+          "feedback": "Traceback (most recent call last):\n  File \"prog.py\", line 4, in custom_function\n    divisors = divisors(n)\nUnboundLocalError: local variable 'divisors' referenced before assignment",
+          "execution_ms": 1875.1
+        },
+        "repair_docs": {
+          "recorded_passed": true,
+          "replayed_passed": true,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "pass",
+          "category": "",
+          "feedback": "",
+          "execution_ms": 1361.7
+        }
+      }
+    },
+    {
+      "example_id": "185",
+      "environment": "py39-sympy-1-13-d53c8933b5",
+      "conditions": {
+        "repair_log": {
+          "recorded_passed": false,
+          "replayed_passed": false,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "error",
+          "category": "api_missing",
+          "feedback": "Traceback (most recent call last):\n  File \"prog.py\", line 6, in custom_function\n    return int(a.rep)\nAttributeError: 'SymmetricModularIntegerMod6' object has no attribute 'rep'",
+          "execution_ms": 1744.8
+        },
+        "repair_docs": {
+          "recorded_passed": true,
+          "replayed_passed": true,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "pass",
+          "category": "",
+          "feedback": "",
+          "execution_ms": 1882.5
+        }
+      }
+    },
+    {
+      "example_id": "199",
+      "environment": "py39-sympy-1-11-2b554a6d4d",
+      "conditions": {
+        "repair_log": {
+          "recorded_passed": false,
+          "replayed_passed": false,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "error",
+          "category": "api_missing",
+          "feedback": "Traceback (most recent call last):\n  File \"prog.py\", line 4, in custom_divides\n    return sympy.divisible(n, p)\nAttributeError: module 'sympy' has no attribute 'divisible'",
+          "execution_ms": 2989.4
+        },
+        "repair_docs": {
+          "recorded_passed": true,
+          "replayed_passed": true,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "pass",
+          "category": "",
+          "feedback": "",
+          "execution_ms": 1346.1
+        }
+      }
+    },
+    {
+      "example_id": "202",
+      "environment": "py39-sympy-1-13-d53c8933b5",
+      "conditions": {
+        "repair_log": {
+          "recorded_passed": false,
+          "replayed_passed": false,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "error",
+          "category": "api_missing",
+          "feedback": "Traceback (most recent call last):\n  File \"prog.py\", line 4, in custom_npartitions\n    return sympy.combinations(n, n)\nAttributeError: module 'sympy' has no attribute 'combinations'",
+          "execution_ms": 1231.1
+        },
+        "repair_docs": {
+          "recorded_passed": true,
+          "replayed_passed": true,
+          "passed_matches": true,
+          "candidate_matches": true,
+          "status": "pass",
+          "category": "",
+          "feedback": "",
+          "execution_ms": 1339.2
+        }
+      }
+    }
+  ],
+  "model": "codellama:7b-instruct",
+  "gains_checked": 9,
+  "all_checked_gains_confirmed": true
+}

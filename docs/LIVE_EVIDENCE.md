@@ -1,5 +1,10 @@
 # Hosted Integration Evidence
 
+Additional study evidence: the teammate's CodeLlama test run is received and
+validated independently, with all nine documentation-assisted repair gains
+replayed in pinned Docker. `docs/TEAMMATE_INTAKE.md` records its positive
+within-model finding and the mixed-runtime limitation on the combined report.
+
 Verified 8 October 2026. Repository: https://github.com/Vansh-jaitly/VersionGuard
 
 ## Actual Actions and PR outcomes

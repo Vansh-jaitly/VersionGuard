@@ -1,0 +1,6 @@
+model,treatment,baseline,n,treatment_rate,baseline_rate,diff,low,high,p,gained,lost,verdict
+codellama:7b-instruct,lookup,version,5,1.0,0.8,0.2,0.0,0.6,1.0,1,0,no effect detected
+codellama:7b-instruct,repair_docs,repair_log,5,0.8,0.8,0.0,0.0,0.0,1.0,0,0,no effect detected
+codellama:7b-instruct,version,task_only,5,0.8,0.8,0.0,0.0,0.0,1.0,0,0,no effect detected
+codellama:7b-instruct,oracle,lookup,4,1.0,1.0,0.0,0.0,0.0,1.0,0,0,no effect detected
+codellama:7b-instruct,repair_log,version,5,0.8,0.8,0.0,0.0,0.0,1.0,0,0,no effect detected

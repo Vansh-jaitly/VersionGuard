@@ -30,7 +30,7 @@ from pinned Docker tests.
 The fixed study contains 20 development and 40 held-out tasks, covering NumPy,
 SciPy and SymPy. Compare task-only, version-only, retrieved docs, reference-API
 docs, log repair and log-plus-doc repair. Qwen 7B is complete; CodeLlama 7B is
-the second approximately same-size model, assigned to the teammate's Mac.
+the second approximately same-size model, evaluated on the teammate's Mac.
 Primary documentation benefit needs a gain of at least 10 percentage points and
 a 95% paired-bootstrap interval wholly above zero, separately for each model.
 
@@ -45,6 +45,11 @@ Core generation, retrieval, guard, repair, evaluation and reporting are implemen
 Qwen's completed evaluation does not meet either primary benefit criterion:
 lookup improves from 45.0% to 52.5% but its interval crosses zero, and both repair
 paths pass 55.0%. This outcome is preserved.
+
+CodeLlama's returned independent run has now passed intake validation. Its
+documentation-assisted repair passes 65% versus 42.5% log-only and meets the
+registered within-model rule; all nine gains replayed in Docker. Mixed Ollama
+versions limit the combined cross-model comparison. See `docs/TEAMMATE_INTAKE.md`.
 
 The project owner now owns all integration and assessment deliverables. The
 teammate owns only environment verification and the CodeLlama evaluation,

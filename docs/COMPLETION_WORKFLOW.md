@@ -18,7 +18,7 @@ and returning its results, metadata and environment-verification log.
 | 6 | Host source and run Actions | Published main and actual green Actions run | Complete |
 | 7 | Demonstrate a failing and fixed PR | PR #1; actual VG001 annotation and red/green run links | Complete |
 | 8 | Run live PR repair and Sweep | Commit-specific repair comment posted; legacy Sweep access limitation recorded | Repair complete; Sweep rubric evidence pending |
-| 9 | Import CodeLlama results when returned | Validation succeeds and complete combined report generated | Teammate evaluation pending |
+| 9 | Import returned CodeLlama results | Standalone strict validation passes; 9/9 repair gains replayed; combined report generated | Independent Mac run accepted; combined report provisional due to Ollama mismatch |
 
 ## Scope and fixed research inputs
 

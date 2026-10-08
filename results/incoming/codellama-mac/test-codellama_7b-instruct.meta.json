@@ -1,0 +1,29 @@
+{
+  "model": "codellama:7b-instruct",
+  "split": "test",
+  "executor": "docker",
+  "temperature": 0.0,
+  "seed": 42,
+  "num_ctx": 4096,
+  "num_predict": 768,
+  "exec_timeout_s": 120,
+  "dataset_sha256": "ca8533ecdc7594a7b7ca090cecd3ca17dc6c34e241277ef852e9ff26607e7fde",
+  "split_sha256": "6f8d968655f79eab9e0afeeb7b176e085b323f1a6fc70a8f77210a93ab22b343",
+  "retrieval_cache_sha256": "a721503561a670d8027a82551d325f668f524e66d225d45473f03a609773cbc0",
+  "protocol_sha256": "5d1e50f0ade2a8192f6e5e0062c024419883999bd26ca30a2559726ceda465a9",
+  "llm": {
+    "kind": "ollama",
+    "model": "codellama:7b-instruct",
+    "base_url": "http://localhost:11434",
+    "model_digest": "8fdf8f752f6e80de33e82f381aba784c025982752cd1ae9377add66449d2225f",
+    "ollama_version": "0.32.15"
+  },
+  "machine": {
+    "system": "Darwin",
+    "release": "25.3.0",
+    "machine": "arm64",
+    "processor": "arm",
+    "python": "3.12.15"
+  },
+  "started_at": "2026-10-08T09:55:25+00:00"
+}

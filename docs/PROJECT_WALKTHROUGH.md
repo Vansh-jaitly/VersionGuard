@@ -9,6 +9,12 @@ Hosted integration was completed later on the same date. See
 named-tool availability limitations. Earlier pending-integration descriptions
 below describe the preceding local build state.
 
+The CodeLlama return was subsequently received and validated. It supplies a
+positive within-model documentation-assisted repair finding (+22.5 points,
+95% interval [+10.0, +35.0]); Qwen's results below remain unchanged. See
+`docs/TEAMMATE_INTAKE.md` for the complete scores, independent gain replay and
+Ollama-version limitation affecting cross-model comparisons.
+
 ## 1. The problem we are solving
 
 A language model can remember an API from a different library version. For

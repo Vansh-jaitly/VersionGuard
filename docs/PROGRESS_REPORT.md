@@ -65,12 +65,24 @@ retrieval or guard is nonfunctional. Wrong-result failures remain the dominant
 lookup failure category, illustrating the gap between finding an API and using
 it correctly.
 
+The teammate's CodeLlama 7B run has now been received and independently
+validated: five-task dev smoke, 40 held-out tasks, 240 records and a 60/60
+reference-verification log. CodeLlama passes 50% task-only, 42.5% version-only,
+40% lookup, 45.5% oracle (22 eligible), 42.5% log repair and 65% docs repair.
+Its primary repair gain is +22.5 points, 95% interval [+10.0, +35.0], p=0.005,
+meeting the registered within-model rule. All nine repair gains were replayed
+in pinned Docker: docs attempts passed and corresponding log attempts failed.
+The combined report is provisional because CodeLlama used Ollama 0.32.15 and
+Qwen used 0.35.0. This supports a model-specific repair finding, not a controlled
+claim that one model is generally better. See `docs/TEAMMATE_INTAKE.md`.
+
 ## Progress, contribution and next steps
 
-Core development and first-model evaluation are complete. The owner now retains
+Core development and both held-out model runs are complete. The owner retains
 CI, named-tool integration, testing evidence and documents. The teammate is
 assigned only reference verification and CodeLlama 7B evaluation on the Mac;
-returned JSONL/metadata will be validated before creating the combined report.
+returned JSONL/metadata have passed standalone validation. The combined report
+retains its runtime warning; original Qwen evidence is unchanged.
 
 Hosted Actions, the guard-failing then corrected PR and live repair comment are
 complete. Authenticated Qodo Command returned a service-discontinued notice and
@@ -79,6 +91,9 @@ GitHub app names returned 404. Named-tool test-generation and Sweep rubric evide
 therefore remain unmet pending supported access or an instructor-approved
 alternative. Existing tests are not tool-generated. Contribution records disclose
 AI assistance and distinguish work assignment from completion.
+
+Codeium/Windsurf is installed and a fresh coverage baseline is recorded, but
+editor login failed; the user has deferred that work. No generated tests are claimed.
 
 Known limits include partial oracle availability, a small selected benchmark,
 name-based rather than full type-aware static checking, dependency ranges and

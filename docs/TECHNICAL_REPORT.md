@@ -2,15 +2,16 @@
 
 **Audience:** Senior engineering review  
 **Date:** 8 October 2026, Asia/Calcutta  
-**Scope:** Current implementation, completed Qwen evaluation, hosted integration
+**Scope:** Current implementation, both model evaluations, hosted integration
 verification, teammate handoff and remaining delivery work.
 
 ## 1. Engineering assessment
 
-VersionGuard is a working CLI research prototype with a complete first-model
-evaluation and implemented integration tooling. The core build phase is
-complete. Hosted CI and the PR demonstration are verified. Second-model
-evaluation and named-tool rubric evidence remain outstanding.
+VersionGuard is a working CLI research prototype with two independent held-out
+model runs and verified integration tooling. The core build phase is
+complete. Hosted CI and the PR demonstration are verified, and both model
+datasets are audited. The combined inference-runtime mismatch and named-tool rubric evidence
+remain outstanding.
 
 The application can retrieve documentation for a pinned library version,
 propose code or repairs using local Ollama, flag selected invalid library calls,
@@ -18,8 +19,9 @@ execute benchmark answers in pinned Docker environments, and produce paired
 statistical reports. GitHub CI and a local PR repair-comment path are written
 and verified on GitHub. `docs/LIVE_EVIDENCE.md` contains actual run/comment links
 and independent verification outcomes. A delivery ZIP has been produced, and the user
-reports having sent the teammate work. Receipt and execution by the teammate
-have not been independently verified.
+reports having sent the teammate work. Its returned folder is now inspected;
+the raw CodeLlama data and reference log are preserved. Local replay validates
+the nine repair gains, rather than independently witnessing the Mac generation process.
 
 The primary research claim is not established by the completed Qwen run.
 Documentation lookup improves the observed pass rate by 7.5 percentage points,
@@ -28,6 +30,14 @@ but the confidence interval crosses zero and the gain is below the registered
 These findings must remain part of the final report even if the second model
 performs better.
 
+The returned CodeLlama run now supplies a positive model-specific repair result:
+42.5% log-only versus 65.0% log-plus-docs, +22.5 points with a 95% interval
+[+10.0, +35.0] and p=0.005. Its standalone report passes strict validation and
+all nine paired repair gains replayed in local pinned Docker. The combined
+comparison remains provisional because the Mac used Ollama 0.32.15 while Qwen
+used 0.35.0. See `docs/TEAMMATE_INTAKE.md`; do not infer a controlled ranking
+of the two models from this mixed-runtime comparison.
+
 ## 2. Delivery status
 
 | Component | Implementation | Evidence and remaining boundary |
@@ -35,16 +45,16 @@ performs better.
 | Bot and pinned-version documentation lookup | Complete | Real Ollama and cached vector retrieval used |
 | Static library API guard | Complete within stated limits | Tests and local NumPy failure/pass demo |
 | Benchmark preparation and Docker executor | Complete | All 60 selected tasks prepared across 15 environments |
-| Six-condition evaluation runner | Complete | Full Qwen dev and held-out test runs |
+| Six-condition evaluation runner | Complete | Qwen full dev/test, CodeLlama five-task smoke and full held-out test |
 | Standalone repair command | Complete | Independent repaired NumPy example tested in Docker |
-| Reporting and result import | Complete | Qwen validation and report reproduction; second-model import pending |
+| Reporting and result import | Verified | Qwen and standalone CodeLlama reports reproduced; mixed-runtime comparison remains provisional |
 | GitHub Actions workflow | Verified hosted | Green baseline and red/green guard PR; see live evidence |
 | PR repair preview/posting helper | Verified live | Commit-specific Qwen comment posted; wrong proposal preserved and independently tested |
 | Teammate delivery archive | Revised | Evaluation-only scope; earlier 83-file archive sent according to user |
-| CodeLlama 7B evaluation on teammate Mac | Assigned | Results not received |
+| CodeLlama 7B evaluation on teammate Mac | Returned and audited | 40 tasks/240 cells, five-task dev smoke, 60/60 reference log; 9/9 repair gains replayed |
 | Qodo and Sweep evidence | Attempted; external limitations | Qodo CLI discontinued notice; two legacy Sweep app names returned 404; rubric items unmet |
 | Submission documents | Complete for current evidence | Charter, timeline, brief progress report, demo guide and contribution disclosure |
-| Final combined report and presentation | Pending | Requires teammate results and student rehearsal/presentation |
+| Combined report and presentation | Provisional report ready | Ollama mismatch disclosed; student rehearsal/presentation pending |
 
 ## 3. Architecture and implemented behavior
 
@@ -272,7 +282,8 @@ Mac inference timing must be reported separately from Windows timing.
 
 The user has reported sending earlier teammate work. The revised scope is only
 CodeLlama environment verification and evaluation (`docs/EVALUATION_ONLY.md`).
-No second-model files have been returned yet. The source is committed and
+CodeLlama files are returned and accepted independently; side-by-side results
+are saved with an Ollama-version warning. The source is committed and
 published at https://github.com/Vansh-jaitly/VersionGuard. All hosted links are
 indexed in `docs/LIVE_EVIDENCE.md`. Qodo Command 0.36.0 was installed,
 authenticated and attempted with an approved isolated input, but the actual
@@ -284,11 +295,9 @@ returned 404. These named-tool requirements remain unmet.
 
 | Priority | Work | Responsible party | Completion evidence |
 |---|---|---|---|
-| P0 | Verify pinned environments on Mac | Teammate | All selected references pass; mismatches resolved before model evaluation |
-| P0 | CodeLlama dev smoke and full test evaluation | Teammate | Standard JSONL + metadata, 40 tasks, 240 unique test cells, no environment errors |
-| P0 | Validate returned results and merge report | Core owner | Import validation succeeds; complete two-model report generated |
+| P0 | Resolve or explicitly retain inference-runtime limitation | Project owner | Ollama mismatch remains visible; any requested replication preserves original data |
 | P1 | Inspect failures across models | Both | Task IDs, proposed code, actual errors and explained categories |
-| P1 | Final combined report and student presentation | Project owner | Validated two-model tables, uncertainty and demo evidence; current submission docs complete |
+| P1 | Student presentation and final evidence review | Project owner | Standalone model findings, provisional comparison, uncertainty and actual demo evidence |
 | P2 | Named-tool tests and coverage comparison | Project owner | Supported tool or instructor-approved alternative, actual generation and comparable coverage |
 | P2 | Sweep rubric evidence | Project owner | Supported integration or instructor acceptance of documented availability limitation |
 
@@ -301,7 +310,7 @@ a hardening choice, not a completed control.
 
 ## 8. Residual limits and follow-on engineering
 
-1. **Scientific scope:** 40 held-out tasks and one completed model give wide
+1. **Scientific scope:** 40 held-out tasks and two local models give wide
    intervals. Oracle coverage is partial. Library distribution is uneven and
    the selection excludes an incompatible pinned version. Training-data overlap
    is not controlled. General production benefit is unproven.
@@ -346,6 +355,8 @@ Paths are relative to the project root.
 | Repair and guard demonstrations | `results/repair-demo*.json`, `results/guard-demo.json` |
 | Integration verification | `results/integration-validation.md` |
 | Hosted Actions/PR evidence and tool limitations | `docs/LIVE_EVIDENCE.md`, `results/live-pr-*.json`, `results/tool-availability/` |
+| CodeLlama intake and independent gain replay | `docs/TEAMMATE_INTAKE.md`, `results/incoming/codellama-mac/` |
+| Provisional two-model report | `results/model-comparison/report-test.md`, matching CSVs |
 | Coverage before/after integration | `results/coverage-baseline.json`, `results/coverage-integration.json` |
 | CI | `.github/workflows/ci.yml`, `requirements-ci.txt` |
 | Teammate assignment | `docs/HANDOFF.md`, `docs/TEAMMATE.md` |

@@ -2,7 +2,8 @@
 
 Updated 2026-10-08. The core implementation and first model evaluation are
 complete. Hosted CI and live PR repair integration are verified. The project
-still needs the second model and named-tool rubric evidence. See
+has received and validated the independent CodeLlama run; combined comparison
+retains an Ollama-version mismatch. Named-tool rubric evidence remains pending. See
 `docs/LIVE_EVIDENCE.md` for actual links and external-service limitations.
 
 ## Completed evaluation
@@ -89,6 +90,14 @@ checking honestly reports `not_checked` for this pinned 1.25.0 example.
 
 ## Next stage
 
+CodeLlama return accepted: 40 tasks/240 cells, 188 generations, 34 carried
+passes, 18 oracle skips and no recorded environment errors. Its docs repair
+rate is 65% versus 42.5% for log-only repair; the +22.5-point gain and interval
+[+10.0, +35.0] meet the registered within-model rule. All nine gains replayed
+in local pinned Docker. `docs/TEAMMATE_INTAKE.md` contains the audit; standalone
+results are in `results/incoming/codellama-mac/`. The two-model report in
+`results/model-comparison/` is provisional: Ollama 0.32.15 versus 0.35.0.
+
 Completion verification: 92 tests and 2 subtests pass, lint passes, core
 coverage is 69%, and the 36-cell fixture pipeline and pinned guard demo pass.
 Hosted baseline CI is green. PR #1 has actual red/green checks and a posted
@@ -96,10 +105,10 @@ commit-specific local Qwen repair comment. Independent NumPy 1.26.4 Docker
 checks reject Qwen's static-clean `np.isscalar` proposal and accept the reviewed
 `array.item()` correction. Source and evidence are published on GitHub.
 
-1. The teammate verifies Mac environments and evaluates only
-   `codellama:7b-instruct` with the fixed settings. See `docs/EVALUATION_ONLY.md`.
-2. Validate returned JSONL/metadata with `scripts.import_results`, then produce
-   a complete combined report. Do not rerun Qwen under its equivalent alias.
+1. Completed: teammate return includes a 60/60 reference log, five-task dev smoke
+   and full CodeLlama held-out evaluation. See `docs/EVALUATION_ONLY.md`.
+2. Completed independently: incoming validation and report reproduction. Keep
+   the mixed-runtime combined report provisional. Do not rerun Qwen under its alias.
 3. Resolve the named-tool rubric gaps through supported access or an
    instructor-approved alternative. Authenticated Qodo Command returned a
    discontinued-service notice and generated zero tests. Sweep's README points
@@ -115,6 +124,6 @@ inputs/settings before copying. Cross-model reporting also checks generation
 settings and Ollama versions. The original coverage baseline is preserved.
 See `docs/HANDOFF.md` for the current handoff instructions.
 
-No second-model evaluation, named-tool test generation or Sweep PR is claimed
-complete. Hosted Actions and actual repair posting are complete; user reports
+No named-tool test generation or Sweep PR is claimed complete. Both model runs,
+hosted Actions and actual repair posting are complete; user reports
 having sent an earlier teammate archive.
